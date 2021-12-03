@@ -60,7 +60,7 @@ When you actually run the text classifier, the existing 2.5GByte model will be d
 Thus, we recommend that:
 * Install `flair` on your laptop using `pip3 install flair`
 * Do your development by running your `worker-server.py` on your laptop natively and not in a container or pod. This means you'll download the 2.5GB data file once.
-* Deploy Redis and Rabbitmq and the use the `kubectl port-forward` mechanism listed in the [corresponding README.md](../redis/README.md) file to expose those services on your local machine. We've [provided a script `deploy-local-dev.sh`](../deploy-local-dev.sh) for that purpose.
+* Deploy Redis and Rabbitmq and the use the `kubectl port-forward` mechanism listed in the [corresponding README.md](../../conditions_cache/redis/README.md) file to expose those services on your local machine. We've [provided a script `deploy-local-dev.sh`](../deploy-local-dev.sh) for that purpose.
 * Now that you are port-forwarding during development, you can run `worker-server.py` on your laptop and it will find the Redis/Rabbitmq ports on the localhost. 
 * But, when you deploy your solution in Kubernetes, you'll need to tell `worker-server.py` what hosts to use when deployed; this should be done using environment variables in the deployment specification.
 * Use the provided `log_info` and `log_debug` routines that write to the `logs` topic to simplify your development. You won't be able to figure out what is going on without logs. We've provided template code for that.
