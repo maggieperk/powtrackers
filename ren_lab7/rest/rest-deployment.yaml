@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rest-deployment
+spec:
+  selector:
+    matchLabels:
+      app: rest
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: rest
+    spec:
+      containers:
+      - name: rest-server
+        image: fakedir/sentiment-rest:v1 # REBUILD THIS
+        imagePullPolicy: Never # for running locally and with locally built images
+
+        env:
+        - name: REDIS_HOST
+          value: redis
+        - name: RABBITMQ_HOST
+          value: rabbitmq
+          # If your cluster config does not include a dns service, then to
+          # instead access environment variables to find service host
+          # info, comment out the 'value: dns' line above, and uncomment the
+          # line below:
+          # value: env
+        # ports:
+        # - containerPort: 5000
