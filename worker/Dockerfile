@@ -1,6 +1,6 @@
 FROM dirkcgrunwald/flair:latest
 
-RUN  pip3 install pika flask redis requests jsonpickle 
+RUN  pip3 install pika flask redis requests jsonpickle beautifulsoup4
 COPY worker-server.py .
 
 ENV PYTHONUNBUFFERED=1
