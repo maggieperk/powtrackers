@@ -1,18 +1,47 @@
 # File to fetch current resort conditions HTML and parse via beautiful soup
 from bs4 import BeautifulSoup
 import requests
-import sys
 
-# fetch the raw HTML for the given conditions URL
-def scrape_resort_conditions_page(conditions_url):
+# Initializing Mountain Constants
+COPPER = 'Copper'
+ELDORA = 'Eldora'
+STEAMBOAT = 'Steamboat'
+WINTER_PARK = 'Winter Park'
+
+# Initializing Resort Name to URL mapping
+resort_to_url = {
+    COPPER: "https://www.coppercolorado.com/the-mountain/conditions-weather/snow-report",
+    ELDORA: "https://www.eldora.com/the-mountain/conditions-weather/current-conditions-forecast",
+    STEAMBOAT: "https://www.steamboat.com/the-mountain/mountain-report#/",
+    WINTER_PARK: "https://www.winterparkresort.com/the-mountain/mountain-report#/"
+}
+
+
+# Fetch the current conditions for the given resort name, returns JSON format
+def scrape_resort_conditions_page(resort_name):
+    conditions_url = resort_to_url[resort_name]
     response = requests.get(conditions_url)
     raw_html = response.text
-    return raw_html
+    resort_not_found_response = {"ERROR resort not found"}
 
+    if resort_name == COPPER:
+        return read_copper_conditions(raw_html)
+    elif resort_name == ELDORA:
+        return read_eldora_conditions(raw_html)
+    elif resort_name == STEAMBOAT:
+        return read_steamboat_conditions(raw_html)
+    elif resort_name == WINTER_PARK:
+        return read_winter_park_conditions(raw_html)
+    else:
+        return resort_not_found_response
+
+
+# Debugging function to return pretty HTML version of a webpage
 def parse_raw_html_for_conditions(raw_hmtl):
     conditions_soup = BeautifulSoup(raw_hmtl, 'html.parser')
     pretty_soup = conditions_soup.prettify()
     return pretty_soup
+
 
 # Format the current weather conditions to a standard JSON style
 def format_conditions_json(new_snow_inches, wind_speed, lifts_open, trails_open):
@@ -63,15 +92,65 @@ def read_winter_park_conditions(raw_html):
 
     return format_conditions_json(new_snow_inches, wind_speed, lifts_open, trails_open)
 
-def main():
-    print("Running main")
-    conditions_url = 'https://www.winterparkresort.com/the-mountain/mountain-report#/'
-    raw_html = scrape_resort_conditions_page(conditions_url)
-    # Uncomment to debug Raw HTML
-    #pretty_html = parse_raw_html_for_conditions(raw_html)
 
-    conditions = read_winter_park_conditions(raw_html)
-    print(conditions)
+# Read Raw HTML from Copper Mountain to get snow report
+def read_copper_conditions(raw_html):
+    conditions_soup = BeautifulSoup(raw_html, 'html.parser')
+
+    new_snow_inches = -1
+
+    wind_speed = -1
+
+    lifts_open = -1
+
+    trail_open = -1
+
+    return format_conditions_json(new_snow_inches, wind_speed, lifts_open, trail_open)
+
+
+# Read Raw HTML from Eldora Mountain to get snow report
+def read_eldora_conditions(raw_html):
+    conditions_soup = BeautifulSoup(raw_html, 'html.parser')
+
+    new_snow_inches = -1
+
+    wind_speed = -1
+
+    lifts_open = -1
+
+    trail_open = -1
+
+    return format_conditions_json(new_snow_inches, wind_speed, lifts_open, trail_open)
+
+
+# Read Raw HTML from Copper Mountain to get snow report
+def read_steamboat_conditions(raw_html):
+    new_snow_inches = -1
+
+    wind_speed = -1
+
+    lifts_open = -1
+
+    trail_open = -1
+
+    return format_conditions_json(new_snow_inches, wind_speed, lifts_open, trail_open)
+
+def main():
+    print("Fetching Winter Park Conditions")
+    wp_conditions = scrape_resort_conditions_page(WINTER_PARK)
+    print(wp_conditions)
+
+    print("Fetching Copper Conditions")
+    copper_conditions = scrape_resort_conditions_page(COPPER)
+    print(copper_conditions)
+
+    print("Fetching Eldora Conditions")
+    eldora_conditions = scrape_resort_conditions_page(ELDORA)
+    print(eldora_conditions)
+
+    print("Fetching Steamboat Conditions")
+    steamboat_conditions = scrape_resort_conditions_page(STEAMBOAT)
+    print(steamboat_conditions)
 
 if __name__ == "__main__":
     main()
