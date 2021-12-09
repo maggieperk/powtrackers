@@ -36,8 +36,9 @@ def mkReq(reqmethod, endpoint, data):
 
 mkReq(requests.get, "apiv1/traffic",
       data={
-          "home": "123 Boulder Rd",
-          "resort": "Eldora"
+          "home": "ECCR",
+          "resort": "Eldora",
+          "API": ''
       })
 
 mkReq(requests.get, "apiv1/getSkiSuggestions", data=None)

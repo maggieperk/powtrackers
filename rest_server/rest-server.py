@@ -4,9 +4,18 @@ import platform
 import io, os, sys
 import pika, redis
 import jsonpickle
+from googleMapsAPI import getTravelInfo
 
 # Initialize the Flask application
 app = Flask(__name__)
+
+coordinates_start = {'ECCR': ['40.007719', '-105.261416']}
+ 
+coordinates_end = {'Eldora': ['39.938086', '-105.584282'],
+                   'Steamboat': ['40.455464', '-106.808369'],
+                   'Copper': ['39.498871', '-106.139443'],
+                   'Winter Park': ['39.886346', '-105.761533']
+                } 
 
 # import logging
 # log = logging.getLogger('werkzeug')
@@ -96,7 +105,7 @@ def resortConditions(name):
     new_snow = '14"'
     #new_snow = conditions['newSnow']
 
-
+    # TODO: call weather unlocked api function and add response to the response below
     response = jsonpickle.encode({
         'resort': name,
         'trailsOpen': open_trails,
@@ -110,18 +119,21 @@ def getResortTraffic():
     json = request.get_json()
     start_location = json['home']
     destination_resort = json['resort']
+    apiKey = json["API"]
 
     # TODO: Get the resort's GPS location from the resort DB
-    gps_location = '123.456'
+    gps_start = coordinates_start[start_location]
+    gps_end = coordinates_end[destination_resort]
 
     # TODO: Call Google Maps api
-    traffic_time = 10
+    trafficInfo = getTravelInfo(coordinates_start, coordinates_end, API_KEY = apiKey)
 
     response = jsonpickle.encode({
         "start_location": start_location,
         "resort": destination_resort,
-        "destination_location": gps_location,
-        "traffic_time": traffic_time})
+        "destination_location": gps_end,
+        "distance": trafficInfo[destination_resort]['miles'],
+        "traffic_time": trafficInfo[destination_resort]['time']})
 
     return Response(response = response, status=200, mimetype='application/json')
 
