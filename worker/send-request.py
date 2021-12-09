@@ -22,16 +22,11 @@ rabbitMQHost = os.getenv("RABBITMQ_HOST") or "localhost"
 # so you'll need to test that out another way or modify this example.
 #
 
-workerJson = {'model': 'sentiment',
-              'sentences': [
-                      'I think this is a good thing',
-                     'This thing sucks'
-                  ],
-               'callback' : {
-                   'url' : "http://localhost",
-                   'data' : "No one is listening"
-               }
-            }
+workerJson = {'resorts': [
+    'Eldora',
+    'Copper',
+    'Winter Park',
+    'Steamboat']}
 
 rabbitMQ = pika.BlockingConnection(
     pika.ConnectionParameters(host=rabbitMQHost))

@@ -1,22 +1,15 @@
 #
 # Worker server
 #
-import pickle
-import platform
-import io
-import os
-import sys
-import pika
-import redis
-import hashlib
-import json
-import requests
+from fetch_current_conditions import scrape_resort_conditions_page
+
+import datetime
 import jsonpickle
-
-
-from flair.models import TextClassifier
-from flair.data import Sentence
-
+import os
+import pika
+import platform
+import redis
+import sys
 
 hostname = platform.node()
 
@@ -60,33 +53,30 @@ def callback(ch, method, properties, body): # from https://www.rabbitmq.com/tuto
     # time.sleep(body.count(b'.'))
     # print(" [x] Done")
     ch.basic_ack(delivery_tag=method.delivery_tag)
-    sentence_dict = jsonpickle.decode(body)
-    print(sentence_dict)
+    resort_dict = jsonpickle.decode(body)
+    print(resort_dict)
 
-    processMessage(sentence_dict)
+    processMessage(resort_dict)
     
 
-def processMessage(sentence_dict):
+def processMessage(resort_dict):
+    resorts_list = resort_dict['resorts']
 
-    sentence = Sentence(sentence_dict['sentence']) #input incoming sentence here
-    #load tagger
-    classifier = TextClassifier.load('sentiment')
-    print(sentence)
-    classifier.predict(sentence)
-    # dont push back to queue; only write to database
-    # print("hello there")
-    # print(sentence_dict['sentence'])
-    # db.set(sentence_dict['sentence'], str(prediction))
-    prediction = sentence.to_dict('sentiment')
-    print('Prediction: ', prediction)
-
-    # just save to database
-    db.set(prediction['text'], str(prediction))
-
-
-##
-## Your code goes here...
-##
+    for resort in resorts_list:
+        try:
+            log_debug(f"Fetching conditions for {resort}")
+            resort_conditions = scrape_resort_conditions_page(resort)
+            current_time = datetime.datetime.now()
+            condition_dict = {
+                'conditions': resort_conditions,
+                'lastRefreshedTime': current_time
+            }
+            log_debug(f"Resort conditions are: {condition_dict}")
+            log_debug(f"Writing conditions to cache for {resort}.")
+            db.set(resort, str(condition_dict))
+            log_info(f"Successfully fetched conditions for {resort} and updated cache.")
+        except Exception as e:
+            log_info(f"Exception while trying to process conditions for {resort}: {e}")
 
 
 rabbitMQChannel.basic_consume(queue='toWorker', on_message_callback=callback)
