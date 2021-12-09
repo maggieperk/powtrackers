@@ -1,0 +1,60 @@
+{
+    "destination_addresses" : [
+       "Eldora Mountain Resort, Colorado 80466, USA",
+       "2160 Mt Werner Cir, Steamboat Springs, CO 80487, USA",
+       "Copper Point LN, Frisco, CO 80443, USA",
+       "Winter Park Resort - Lower Circle, Winter Park, CO 80482, USA"
+    ],
+    "origin_addresses" : [ "Engineering Center (Farside), Boulder, CO 80309, USA" ],
+    "rows" : [
+       {
+          "elements" : [
+             {
+                "distance" : {
+                   "text" : "36.4 km",
+                   "value" : 36423
+                },
+                "duration" : {
+                   "text" : "41 mins",
+                   "value" : 2482
+                },
+                "status" : "OK"
+             },
+             {
+                "distance" : {
+                   "text" : "265 km",
+                   "value" : 264984
+                },
+                "duration" : {
+                   "text" : "3 hours 5 mins",
+                   "value" : 11124
+                },
+                "status" : "OK"
+             },
+             {
+                "distance" : {
+                   "text" : "142 km",
+                   "value" : 141863
+                },
+                "duration" : {
+                   "text" : "1 hour 39 mins",
+                   "value" : 5948
+                },
+                "status" : "OK"
+             },
+             {
+                "distance" : {
+                   "text" : "123 km",
+                   "value" : 122871
+                },
+                "duration" : {
+                   "text" : "1 hour 36 mins",
+                   "value" : 5761
+                },
+                "status" : "OK"
+             }
+          ]
+       }
+    ],
+    "status" : "OK"
+ }
