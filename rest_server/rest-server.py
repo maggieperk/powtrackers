@@ -3,8 +3,6 @@ from flask import Flask, request, Response, jsonify
 import platform
 import io, os, sys
 import pika, redis
-import hashlib, requests
-import json
 import jsonpickle
 
 # Initialize the Flask application
@@ -23,13 +21,9 @@ rabbitMQHost = os.getenv("RABBITMQ_HOST") or "localhost"
 print("Connecting to rabbitmq({}) and redis({})".format(rabbitMQHost,redisHost))
 
 ##
-## Your code goes here..
-##
-
-##
 ## Set up redis connections
 ##
-db = redis.Redis(host=redisHost, db=1, decode_responses=True)                                                                           
+db = redis.Redis(host=redisHost, db=1, decode_responses=True)
 
 ##
 ## Set up rabbitmq connection
@@ -60,53 +54,77 @@ def sendToWorker(message_dict):
     channel.close()
     connection.close()
 
+# Rank the conditions from the given mapping of resort conditions
+def rankConditions(conditions_map):
+    # TODO: define conditions ranking here
+    ranked_list = ['Copper', 'Steamboat', 'Winter Park', 'Eldora']
+    return ranked_list
+
 #REST methods
 @app.route('/', methods = ['GET'])
 def hello():
     return '<h1> Sentiment analysis REST Server </h1><p> Please use a valid endpoint.</p>'
 
-@app.route("/apiv1/analyze", methods=['POST'])
-def analyze():
-    # log.log('Starting API request on /apiv1/analyze', True)
-    json = request.get_json()
-    sentences = json['sentences']
-    model = json['model']
+# Provide a ranked list of ski suggestions for the user
+@app.route("/apiv1/getSkiSuggestions", methods=['GET'])
+def getSkiSuggestions():
+    # log.log('Starting API request on /apiv1/getSkiSuggestions', True)
 
-    response = jsonpickle.encode({"action": "queued"})
-    for sentence in sentences:
-        sentence_dict = {'sentence': sentence, 'model': model}
-        sendToWorker(sentence_dict)
+    # TODO: Use the db to get current resort conditions
+    #    conditions = []
+    #for key in db.keys():
+    #    resort_conditions = {"resort": key, "conditions": str(db[key]).replace('\\', '')}
+    #    conditions.append(resort_conditions)
+    conditions = [
+        {"Copper": {"newSnow": 24, "trailsOpen": 8}},
+        {"Eldora": {"newSnow": 24, "trailsOpen": 8}},
+        {"Steamboat": {"newSnow": 24, "trailsOpen": 8}},
+        {"Winter Park": {"newSnow": 24, "trailsOpen": 8}}]
+    ranked_conditions = rankConditions(conditions)
+
+    response = jsonpickle.encode({"RankedResults": ranked_conditions})
 
     # log.log('POST /apiv1/analyze', True)
     return Response(response = response, status=200, mimetype='application/json')
 
-@app.route("/apiv1/cache/sentiment", methods=['GET'])
-def sentiment():
-    # only reads from database
-    sentences = []
-    for key in db.keys():
-        out = {"model": "sentiment", "result": str(db[key]).replace('\\', '')}
-        sentences.append(out)
-        
-    # only reads from database
+@app.route("/apiv1/resortConditions/<str:name>", methods=['GET'])
+def getResortConditions(name):
+    # Reading conditions from conditions cache
+    # TODO: Define the columns in the conditions cache rows
+    #conditions = db[name]
+    #open_trails = conditions['trailsOpen']
+    open_trails = '14'
+    wind = '24W'
+    #wind = conditions['wind']
+    new_snow = '14"'
+    #new_snow = conditions['newSnow']
 
-    response = jsonpickle.encode({"model": "sentiment", "sentences": sentences})
+
+    response = jsonpickle.encode({
+        'resort': name,
+        'trailsOpen': open_trails,
+        'wind':  wind,
+        'new_snow': new_snow})
 
     return Response(response = response, status=200, mimetype='application/json')
 
-@app.route("/apiv1/sentence", methods=['GET'])
-def sentence():
+@app.route("/apiv1/traffic", methods=['GET'])
+def getResortTraffic():
     json = request.get_json()
-    sentences_in = json['sentences']
+    start_location = json['home']
+    destination_resort = json['resort']
 
-    sentences_out = []
-    for sentence in sentences_in:
-        out = {}
-        out["analysis"] = {"model": "sentiment", "result": str(db[sentence]).replace('\\', '')}
-        out["sentence"] = sentence
-        sentences_out.append(out)
+    # TODO: Get the resort's GPS location from the resort DB
+    gps_location = '123.456'
 
-    response = jsonpickle.encode({"model": "sentiment", "sentences": sentences_out})
+    # TODO: Call Google Maps api
+    traffic_time = 10
+
+    response = jsonpickle.encode({
+        "start_location": start_location,
+        "resort": destination_resort,
+        "destination_location": gps_location,
+        "traffic_time": traffic_time})
 
     return Response(response = response, status=200, mimetype='application/json')
 
