@@ -33,32 +33,20 @@ def mkReq(reqmethod, endpoint, data):
             f"response code is {response.status_code}, raw response is {response.text}")
         return response.text
 
-mkReq(requests.post, "apiv1/analyze",
-      data={
-          "model": "sentiment",
-          "sentences": [
-              "I think this is a good thing",
-              "This thing sucks",
-              "I don't like that one"
-          ],
-          "callback": {
-              "url": "http://localhost:5000",
-              "data": {"some": "arbitrary", "data": "to be returned"}
-          }
-      }
-      )
 
-mkReq(requests.get, "apiv1/cache/sentiment", data=None)
-
-mkReq(requests.get, "apiv1/sentence",
+mkReq(requests.get, "apiv1/traffic",
       data={
-          "model": "sentiment",
-          "sentences": [
-                    "I think this is a good thing",
-                    "This thing sucks",
-              "I don't like that one"
-          ]
-      }
-      )
+          "home": "123 Boulder Rd",
+          "resort": "Eldora"
+      })
+
+mkReq(requests.get, "apiv1/getSkiSuggestions", data=None)
+
+mkReq(requests.get, "apiv1/resortConditions/Eldora",
+      data=None)
+
+
+mkReq(requests.post, "apiv1/resortConditions/Eldora",
+      data=None)
 
 sys.exit(0)
