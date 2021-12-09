@@ -19,7 +19,7 @@ import json
 # arrival_time = '8:50' # to do - needs to be as an integer in seconds since midnight, January 1, 1970 UTC :(
 # avoid = 'tolls'
 
-# API_KEY = 'AIzaSyAxjuRYGbP3GMzv1o7__kBu0nL2qvy4_TA'
+# API_KEY = 'FAKEAPI'
 
 
 # url = "https://maps.googleapis.com/maps/api/distancematrix/json?" + origins_string + destinations_string + "&key=" + API_KEY
