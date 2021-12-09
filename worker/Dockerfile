@@ -1,4 +1,5 @@
-FROM dirkcgrunwald/flair:latest
+FROM python:3.6-slim
+
 
 RUN  pip3 install pika flask redis requests jsonpickle beautifulsoup4
 COPY worker-server.py .
