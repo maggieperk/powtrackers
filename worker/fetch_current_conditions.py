@@ -114,15 +114,42 @@ def read_winter_park_conditions(raw_html):
 def read_copper_conditions(raw_html):
     conditions_soup = BeautifulSoup(raw_html, 'html.parser')
 
+    # Find New Snow Value
     new_snow_inches = -1
+    weather_widget_tags = conditions_soup.find_all('div', class_='widget-weather')
+    for w_tag in weather_widget_tags:
+        status_tag = w_tag.find('p', class_="status m-")
+        if status_tag.text == 'snow':
+            print("Found snow tag")
+            new_snow_inches = w_tag.find('span', class_="integer m-").text
 
+    # Wind Speed from Copper is not present on their website
     wind_speed = -1
 
+    # Find Lifts and Trails Open
     lifts_open = -1
+    trails_open = -1
+    lift_open_found = False
+    trail_open_found = False
 
-    trail_open = -1
+    trail_and_lifts_div = conditions_soup.find_all('div', class_="dor-grid-item col col-6of12-m-5 base dor-colors u-m-b-10 u-p-a-10")
+    for div_tag in trail_and_lifts_div:
+        if lift_open_found and trail_open_found:
+            break
 
-    return format_conditions_json(new_snow_inches, wind_speed, lifts_open, trail_open)
+        p_tag_text = div_tag.find('p', class_="dtr-type ng-scope").text
+        if p_tag_text == "Open Trails":
+            # The first text value is the # of currently open trails
+            open_trails_text_tag = div_tag.find_all('text', class_="ng-binding")[0]
+            trails_open = open_trails_text_tag.text
+            trail_open_found = True
+        elif p_tag_text == "Open Lifts":
+            open_lifts_text_tag = div_tag.find_all('text', class_="ng-binding")[0]
+            lifts_open = open_lifts_text_tag.text
+            lift_open_found = True
+
+
+    return format_conditions_json(new_snow_inches, wind_speed, lifts_open, trails_open)
 
 
 # Read Raw HTML from Eldora Mountain to get snow report
@@ -132,7 +159,6 @@ def read_copper_conditions(raw_html):
 # Open Lifts in format: <strong>Open Lifts</strong></span><br>Alpenglow<br>Race<br>EZ<br><br></li>
 # AKA for both I should find the open trails list indicator, then get the following items in <br> and count
 # Find Wind Speed: 22 to 32 miles per hour --> search for re w/ miles per hour and digits beforehand
-
 def read_eldora_conditions(raw_html):
     conditions_soup = BeautifulSoup(raw_html, 'html.parser')
 
@@ -191,35 +217,44 @@ def read_eldora_conditions(raw_html):
     return format_conditions_json(new_snow_inches, wind_speed, lifts_open, trails_open)
 
 
-# Read Raw HTML from Copper Mountain to get snow report
+# Read Raw HTML from Steamboat to get snow report
 def read_steamboat_conditions(raw_html):
     conditions_soup = BeautifulSoup(raw_html, 'html.parser')
-    return conditions_soup.prettify()
 
     new_snow_inches = -1
+    col_block_div = conditions_soup.find('div', class_="col conditions-block")
+    data_tags = col_block_div.find_all('p')
+    for dt in data_tags:
+        if re.search('24 hour', dt.text):
+            new_snow_inches = re.search(r'\d+.\d+', dt.text)[0]
 
-    wind_speed = -1
+    wind_speed_tag = conditions_soup.find('p', class_="wind-speed-text")
+    wind_speed = re.search(r'\d+', wind_speed_tag.find('strong').text)[0]
 
-    lifts_open = -1
+    # Find Lifts and trails open values
+    data_block_divs = conditions_soup.find('div', class_="col data-block")
+    trails_open = data_block_divs.find_all('strong')[0].text
 
-    trail_open = -1
+    data_block_main_divs = conditions_soup.find('div', class_="col data-block main-block")
+    # This will return an n/m number so we only want the first value
+    lifts_open = re.split('/', data_block_main_divs.find('div', class_="block-text").text)[0]
 
-    return format_conditions_json(new_snow_inches, wind_speed, lifts_open, trail_open)
+    return format_conditions_json(new_snow_inches, wind_speed, lifts_open, trails_open)
 
 def main():
     print("Fetching Winter Park Conditions")
     wp_conditions = scrape_resort_conditions_page(WINTER_PARK)
     print(wp_conditions)
 
-    print("Fetching Copper Conditions")
+    print("\nFetching Copper Conditions")
     copper_conditions = scrape_resort_conditions_page(COPPER)
     print(copper_conditions)
 
-    print("Fetching Eldora Conditions")
+    print("\nFetching Eldora Conditions")
     eldora_conditions = scrape_resort_conditions_page(ELDORA)
     print(eldora_conditions)
 
-    print("Fetching Steamboat Conditions")
+    print("\nFetching Steamboat Conditions")
     steamboat_conditions = scrape_resort_conditions_page(STEAMBOAT)
     print(steamboat_conditions)
 
