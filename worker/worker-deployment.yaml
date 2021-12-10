@@ -14,8 +14,8 @@ spec:
     spec:
       containers:
       - name: worker
-        image: fakedir/sentiment-worker:v1
-        imagePullPolicy: Never
+        image: karenlstengel/powtrackers-worker:latest
+        # imagePullPolicy: Never
         resources:
           requests:
             cpu: 100m
