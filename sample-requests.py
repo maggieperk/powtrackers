@@ -44,7 +44,10 @@ mkReq(requests.get, "apiv1/traffic",
 mkReq(requests.get, "apiv1/getSkiSuggestions", data=None)
 
 mkReq(requests.get, "apiv1/resortConditions/Eldora",
-      data=None)
+      data={
+          'App ID': 'd8bd1a82',
+          'API': '3a31bf0c1217741c8d00c206034ca4ca',
+      })
 
 
 mkReq(requests.post, "apiv1/resortConditions/Eldora",

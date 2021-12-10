@@ -5,6 +5,7 @@ import io, os, sys
 import pika, redis
 import jsonpickle
 from googleMapsAPI import getTravelInfo
+from weatherUnlockedAPI import getWeatherInfo
 
 # Initialize the Flask application
 app = Flask(__name__)
@@ -102,15 +103,27 @@ def resortConditions(name):
     open_trails = '14'
     wind = '24W'
     #wind = conditions['wind']
-    new_snow = '14"'
+    new_snow = '14'
     #new_snow = conditions['newSnow']
 
-    # TODO: call weather unlocked api function and add response to the response below
-    response = jsonpickle.encode({
+    data_out = {
         'resort': name,
         'trailsOpen': open_trails,
         'wind':  wind,
-        'new_snow': new_snow})
+        'new_snow_in_resort': new_snow}
+
+    # if API info is passed in then get weather unlocked info about resort 
+    json = request.get_json()
+
+    if json is not None:
+        appID = json['App ID']
+        apiKey = json['API']
+        weather_data = getWeatherInfo(coordinates_end[name], appID = appID, APP_KEY = apiKey)
+
+        data_out.update(weather_data)
+    print(data_out)
+
+    response = jsonpickle.encode(data_out)
 
     return Response(response=response, status=200, mimetype='application/json')
 
