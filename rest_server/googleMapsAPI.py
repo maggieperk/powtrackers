@@ -32,7 +32,7 @@ def getTravelInfo(coordinates_start, coordinates_end, API_KEY = ''):
     else:
         # TESTING PARSE OF OUTPUT W/OUT HAVING TO SUBMIT API REQUEST
 
-        response = json.load(open('testingAPIs/sampleMaps.json'))
+        response = json.load(open('../testingAPIs/sampleMaps.json'))
 
     # Process the response and return as dictionary
 

@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: rest-server
-        image: fakedir/sentiment-rest:v1 # REBUILD THIS
+        image: karenlstengel/powtrackers-rest:latest # REBUILD THIS
         imagePullPolicy: Never # for running locally and with locally built images
 
         env:

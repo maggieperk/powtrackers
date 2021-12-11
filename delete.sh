@@ -3,7 +3,6 @@ kubectl delete deployment rabbitmq
 kubectl delete deployment redis
 kubectl delete deployment rest-deployment
 kubectl delete deployment worker-deployment
-kubectl delete deployment rest-server
 kubectl delete service rest-service
 kubectl delete service rabbitmq
 kubectl delete service redis

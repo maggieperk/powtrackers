@@ -7,26 +7,31 @@ import platform
 import io, os, sys
 import pika, redis
 import jsonpickle
+from googleMapsAPI import getTravelInfo
+from weatherUnlockedAPI import getWeatherInfo
 
 # Initialize the Flask application
 app = Flask(__name__)
 
-import logging
-log = logging.getLogger('werkzeug')
-log.setLevel(10) # should be the same as logging.DEBUG
+coordinates_start = {'ECCR': ['40.007719', '-105.261416']}
+
+# import logging
+# log = logging.getLogger('werkzeug')
+# log.setLevel(10) # should be the same as logging.DEBUG
 
 ##
 ## Configure test vs. production
 ##
 redisHost = os.getenv("REDIS_HOST") or "localhost"
-rabbitMQHost = os.getenv("RABBITMQ_HOST") or "localhost"
+#rabbitMQHost = os.getenv("RABBITMQ_HOST") or "localhost"
 
 print("Connecting to rabbitmq({}) and redis({})".format(rabbitMQHost,redisHost))
 
 ##
 ## Set up redis connections
 ##
-db = redis.Redis(host=redisHost, db=1, decode_responses=True)
+db_resort = redis.Redis(host=redisHost, db=0, decode_responses=True)
+db_conditions = redis.Redis(host=redisHost, db=1, decode_responses=True)
 
 ##
 ## Set up rabbitmq connection
@@ -57,6 +62,17 @@ def sendToWorker(message_dict):
     channel.close()
     connection.close()
 
+# Initialize resort info database
+@app.route("/apiv1/initResortDB", methods = ['GET'])
+def initResortDB():
+    json = request.get_json()
+    for key in json.keys():
+        db_resort.set(key, json[key])
+
+    response = jsonpickle.encode({'response': 'Resort DB initialized.'})
+    return Response(response=response, status=200, mimetype='application/json')
+
+
 # Rank the conditions from the given mapping of resort conditions
 def rankConditions(conditions_map):
     # TODO: define conditions ranking here
@@ -78,6 +94,7 @@ def rankConditions(conditions_map):
     ranked_resorts = [resort for resort, score in ranked_tuples]
 
     return ranked_resorts
+
 
 # Provide a ranked list of ski suggestions for the user
 @app.route("/apiv1/getSkiSuggestions", methods=['GET', 'POST'])
@@ -121,35 +138,48 @@ def resortConditions(name):
     open_trails = '14'
     wind = '24W'
     #wind = conditions['wind']
-    new_snow = '14"'
+    new_snow = '14'
     #new_snow = conditions['newSnow']
 
-
-    response = jsonpickle.encode({
+    data_out = {
         'resort': name,
         'trailsOpen': open_trails,
         'wind':  wind,
-        'new_snow': new_snow})
+        'new_snow_in_resort': new_snow}
+
+    # if API info is passed in then get weather unlocked info about resort 
+    json = request.get_json()
+
+    if json is not None:
+        appID = json['App ID']
+        apiKey = json['API']
+        weather_data = getWeatherInfo(db_resort[name].split(','), appID = appID, APP_KEY = apiKey)
+
+        data_out.update(weather_data)
+    print(data_out)
+
+    response = jsonpickle.encode(data_out)
 
     return Response(response=response, status=200, mimetype='application/json')
 
 @app.route("/apiv1/traffic", methods=['GET'])
 def getResortTraffic():
     json = request.get_json()
-    start_location = json['home']
+    start_location = json['start']
     destination_resort = json['resort']
+    apiKey = json["API"]
 
-    # TODO: Get the resort's GPS location from the resort DB
-    gps_location = '123.456'
+    gps_start = coordinates_start[start_location]
+    gps_end = db_resort.get(destination_resort)
 
-    # TODO: Call Google Maps api
-    traffic_time = 10
+    trafficInfo = getTravelInfo({start_location : gps_start}, {destination_resort : gps_end.split(',')}, API_KEY = apiKey)
 
     response = jsonpickle.encode({
         "start_location": start_location,
         "resort": destination_resort,
-        "destination_location": gps_location,
-        "traffic_time": traffic_time})
+        "destination_coords": gps_end,
+        "distance": trafficInfo[destination_resort]['miles'],
+        "traffic_time": trafficInfo[destination_resort]['time']})
 
     return Response(response = response, status=200, mimetype='application/json')
 
