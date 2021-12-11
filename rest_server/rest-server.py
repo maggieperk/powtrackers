@@ -1,5 +1,8 @@
 ##
 from flask import Flask, request, Response, jsonify
+
+import datetime
+import json
 import platform
 import io, os, sys
 import pika, redis
@@ -8,27 +11,26 @@ import jsonpickle
 # Initialize the Flask application
 app = Flask(__name__)
 
-# import logging
-# log = logging.getLogger('werkzeug')
-# log.setLevel(10) # should be the same as logging.DEBUG
+import logging
+log = logging.getLogger('werkzeug')
+log.setLevel(10) # should be the same as logging.DEBUG
 
 ##
 ## Configure test vs. production
 ##
-#redisHost = os.getenv("REDIS_HOST") or "localhost"
-#rabbitMQHost = os.getenv("RABBITMQ_HOST") or "localhost"
+redisHost = os.getenv("REDIS_HOST") or "localhost"
+rabbitMQHost = os.getenv("RABBITMQ_HOST") or "localhost"
 
-#print("Connecting to rabbitmq({}) and redis({})".format(rabbitMQHost,redisHost))
+print("Connecting to rabbitmq({}) and redis({})".format(rabbitMQHost,redisHost))
 
 ##
 ## Set up redis connections
 ##
-#db = redis.Redis(host=redisHost, db=1, decode_responses=True)
+db = redis.Redis(host=redisHost, db=1, decode_responses=True)
 
 ##
 ## Set up rabbitmq connection
 ##
-'''
 rabbitMQ = pika.BlockingConnection(
         pika.ConnectionParameters(host=rabbitMQHost))
 rabbitMQChannel = rabbitMQ.channel()
@@ -54,28 +56,54 @@ def sendToWorker(message_dict):
     channel.basic_publish(exchange = '', routing_key = 'toWorker', body=jsonpickle.encode(message_dict), properties = pika.BasicProperties(delivery_mode=2))
     channel.close()
     connection.close()
-'''
+
 # Rank the conditions from the given mapping of resort conditions
 def rankConditions(conditions_map):
     # TODO: define conditions ranking here
-    ranked_list = ['Copper', 'Steamboat', 'Winter Park', 'Eldora']
-    return ranked_list
+    conditions_scoring_dict = {key: 0 for key in conditions_map.keys}
+
+    # Compare Snowfall
+
+
+    # Compare Open Terrain
+
+
+    # Compare Wind Speeds
+
+
+    # Compare Traffic Times
+    # The resort with the highest
+
+    ranked_tuples = sorted(conditions_scoring_dict.items(), key = lambda kv: kv[1])
+    ranked_resorts = [resort for resort, score in ranked_tuples]
+
+    return ranked_resorts
 
 # Provide a ranked list of ski suggestions for the user
 @app.route("/apiv1/getSkiSuggestions", methods=['GET', 'POST'])
 def getSkiSuggestions():
-    # log.log('Starting API request on /apiv1/getSkiSuggestions', True)
+    log.log('Starting API request on /apiv1/getSkiSuggestions', True)
 
-    # TODO: Use the db to get current resort conditions
-    #    conditions = []
-    #for key in db.keys():
-    #    resort_conditions = {"resort": key, "conditions": str(db[key]).replace('\\', '')}
-    #    conditions.append(resort_conditions)
-    conditions = [
-        {"Copper": {"newSnow": 24, "trailsOpen": 8}},
-        {"Eldora": {"newSnow": 24, "trailsOpen": 8}},
-        {"Steamboat": {"newSnow": 24, "trailsOpen": 8}},
-        {"Winter Park": {"newSnow": 24, "trailsOpen": 8}}]
+    conditions = []
+    for key in db.keys():
+        cache_value = json.loads(db[key])
+        conditions = cache_value['conditions']
+        last_updated_time = cache_value['lastUpdatedTime']
+        resort_conditions = {"resort": key, "conditions": conditions}
+        conditions.append(resort_conditions)
+
+        # Calculate the time difference between when we last updated the cache and now, if > 30 minutes refresh
+        current_time = datetime.datime.now()
+        time_difference_minutes = (current_time - last_updated_time).total_seconds() / 60
+
+        if time_difference_minutes > 30:
+            conditions_message = {
+                'resorts': [key]
+            }
+            log_debug(f"Creating new conditions request for worker for resort {key}.")
+            sendToWorker(conditions_message)
+
+    log_debug(f"Evaluating condtions to develop ranking.")
     ranked_conditions = rankConditions(conditions)
 
     response = jsonpickle.encode({"RankedResults": ranked_conditions})
