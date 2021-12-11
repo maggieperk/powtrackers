@@ -26,7 +26,9 @@ workerJson = {'resorts': [
     'Eldora',
     'Copper',
     'Winter Park',
-    'Steamboat']}
+    'Steamboat'],
+    'App ID': 'd8bd1a82',
+    'API': '3a31bf0c1217741c8d00c206034ca4ca'}
 
 rabbitMQ = pika.BlockingConnection(
     pika.ConnectionParameters(host=rabbitMQHost))

@@ -98,10 +98,10 @@ def parse_raw_html_for_conditions(raw_hmtl):
 # Format the current weather conditions to a standard JSON style
 def format_conditions_json(new_snow_inches, wind_speed, lifts_open, trails_open):
     conditions_json = {
-        'NewSnowInches': new_snow_inches,
-        'WindSpeed': wind_speed,
-        'LiftsOpen': lifts_open,
-        'TrailsOpen': trails_open
+        "NewSnowInches": str(new_snow_inches),
+        "WindSpeed": str(wind_speed),
+        "LiftsOpen": str(lifts_open),
+        "TrailsOpen": str(trails_open)
     }
     return conditions_json
 

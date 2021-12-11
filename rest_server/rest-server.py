@@ -15,15 +15,11 @@ app = Flask(__name__)
 
 coordinates_start = {'ECCR': ['40.007719', '-105.261416']}
 
-# import logging
-# log = logging.getLogger('werkzeug')
-# log.setLevel(10) # should be the same as logging.DEBUG
-
 ##
 ## Configure test vs. production
 ##
 redisHost = os.getenv("REDIS_HOST") or "localhost"
-#rabbitMQHost = os.getenv("RABBITMQ_HOST") or "localhost"
+rabbitMQHost = os.getenv("RABBITMQ_HOST") or "localhost"
 
 print("Connecting to rabbitmq({}) and redis({})".format(rabbitMQHost,redisHost))
 
@@ -49,10 +45,13 @@ def log_debug(message, key=debugKey):
     print("DEBUG:", message, file=sys.stdout)
     rabbitMQChannel.basic_publish(
         exchange='logs', routing_key=key, body=message)
+
+
 def log_info(message, key=infoKey):
     print("INFO:", message, file=sys.stdout)
     rabbitMQChannel.basic_publish(
         exchange='logs', routing_key=key, body=message)
+
 
 def sendToWorker(message_dict):
     connection = pika.BlockingConnection(pika.ConnectionParameters(rabbitMQHost))
@@ -61,6 +60,7 @@ def sendToWorker(message_dict):
     channel.basic_publish(exchange = '', routing_key = 'toWorker', body=jsonpickle.encode(message_dict), properties = pika.BasicProperties(delivery_mode=2))
     channel.close()
     connection.close()
+
 
 # Initialize resort info database
 @app.route("/apiv1/initResortDB", methods = ['GET'])
@@ -73,24 +73,88 @@ def initResortDB():
     return Response(response=response, status=200, mimetype='application/json')
 
 
+# Initialize conditions info database
+@app.route("/apiv1/initConditionsDB", methods=['POST'])
+def initConditionsDB():
+    json = request.get_json()
+    resorts = json['resorts']
+    appID = json['App ID']
+    apiKey = json['API']
+
+    message = {'resorts': resorts,
+                          'App ID': appID,
+                          'API': apiKey}
+    log_debug(f"Creating initial conditions request for worker.")
+    sendToWorker(message)
+
+    response = jsonpickle.encode({'response': 'Conditions DB initialized.'})
+    return Response(response=response, status=200, mimetype='application/json')
+
+
+def score_max_temp(max_temp):
+    if max_temp <= 0 :
+        # You're gonna feel the chill
+        return 2
+    elif max_temp > 0 and max_temp <= 10:
+        return 4
+    elif max_temp > 10 and max_temp < 25:
+        # The Sweet Spot For Ideal Ski Day Enjoyment
+        return 10
+    elif (max_temp >= 25 and max_temp <= 40):
+        return 6
+    else:
+        # Over 40F? You're gonna feel the burn.
+        return 2
+
+
+def score_wind_speed(wind_speed):
+    if wind_speed < 5:
+        return 10
+    elif 5 <= wind_speed < 10:
+        return 8
+    elif 10 <= wind_speed < 15:
+        return 6
+    elif 15 <= wind_speed < 20:
+        return 4
+    elif 20 <= wind_speed:
+        return 2
+
+
 # Rank the conditions from the given mapping of resort conditions
-def rankConditions(conditions_map):
-    # TODO: define conditions ranking here
+def rank_conditions(conditions_map, traffic_map):
     conditions_scoring_dict = {key: 0 for key in conditions_map.keys}
+    resorts = conditions_map.keys
 
-    # Compare Snowfall
+    # Build metric dictionaries
+    for r in resorts:
+        # Snow Inches * 10 (Snow has highest weight value in conditions)
+        snow_score = double(conditions_map[r]['conditions']['weather']['snow_total_in']) * 10.0
 
+        # Score is from 2 to 10
+        max_temp = conditions_map[r]['conditions']['weather']['temp_max_f']
+        max_temp_score = score_max_temp(max_temp)
 
-    # Compare Open Terrain
+        # Score is from 2 to 10
+        wind_speed = conditions_map[r]['conditions']['weather']['windspd_max_mph']
+        wind_speed_score = score_wind_speed(wind_speed)
 
+        # Score is equivalent to total amount of open terrain
+        open_terrain_score = conditions_map[r]['conditions']['resortConditions']['OpenLifts'] + \
+                                  conditions_map[r]['conditions']['resortConditions']['OpenTrails']
 
-    # Compare Wind Speeds
+        mountain_score = snow_score + max_temp_score + wind_speed_score + open_terrain_score
+        conditions_scoring_dict[r] = mountain_score
 
+    # Compare Traffic Values (Relative value based on index in list)
+    traffic_tuples = sorted(traffic_map.items(), key=lambda kv: kv[1], reverse=True)
+    traffic_rank = [resort for resort, traffic_time in traffic_tuples]
 
-    # Compare Traffic Times
-    # The resort with the highest
+    for r in resorts:
+        traffic_score = (traffic_rank.find(r) + 1) * 2
+        conditions_scoring_dict[r] = conditions_scoring_dict[r] + traffic_score
 
-    ranked_tuples = sorted(conditions_scoring_dict.items(), key = lambda kv: kv[1])
+    # Rank the resorts based on total conditions values
+    ranked_tuples = sorted(conditions_scoring_dict.items(), key=lambda kv: kv[1])
     ranked_resorts = [resort for resort, score in ranked_tuples]
 
     return ranked_resorts
@@ -99,65 +163,71 @@ def rankConditions(conditions_map):
 # Provide a ranked list of ski suggestions for the user
 @app.route("/apiv1/getSkiSuggestions", methods=['GET', 'POST'])
 def getSkiSuggestions():
-    log.log('Starting API request on /apiv1/getSkiSuggestions', True)
+    request_json = request.get_json()
+    appID = request_json['App ID']
+    apiKey = request_json['API']
 
-    conditions = []
-    for key in db.keys():
-        cache_value = json.loads(db[key])
-        conditions = cache_value['conditions']
+    log_info('Starting API request on /apiv1/getSkiSuggestions')
+
+    conditions = dict()
+    resorts_to_update = []
+    all_resorts = db_conditions.keys()
+    for key in all_resorts:
+        cache_value = json.loads(db_conditions[key])
+        resort_conditions = cache_value['conditions']
         last_updated_time = cache_value['lastUpdatedTime']
-        resort_conditions = {"resort": key, "conditions": conditions}
-        conditions.append(resort_conditions)
+        conditions[key] = resort_conditions
 
         # Calculate the time difference between when we last updated the cache and now, if > 30 minutes refresh
         current_time = datetime.datime.now()
         time_difference_minutes = (current_time - last_updated_time).total_seconds() / 60
 
         if time_difference_minutes > 30:
-            conditions_message = {
-                'resorts': [key]
-            }
-            log_debug(f"Creating new conditions request for worker for resort {key}.")
-            sendToWorker(conditions_message)
+            resorts_to_update.append(key)
 
-    log_debug(f"Evaluating condtions to develop ranking.")
-    ranked_conditions = rankConditions(conditions)
+    if resorts_to_update:
+        conditions_message = {'resorts': resorts_to_update,
+                              'App ID': appID,
+                              'API': apiKey}
+        log_debug(f"Creating new conditions request for worker.")
+        sendToWorker(conditions_message)
+
+    log_debug(f"Evaluating conditions to develop ranking.")
+
+    # TODO: Update to call the actual traffic database
+    traffic_mapping = {resort: 10 for resort in all_resorts}
+
+    ranked_conditions = rank_conditions(conditions, traffic_mapping)
 
     response = jsonpickle.encode({"RankedResults": ranked_conditions})
 
-    # log.log('GET /apiv1/getSkiSuggestions', True)
+    log_info('Completed API request for /apiv1/getSkiSuggestions')
     return Response(response=response, status=200, mimetype='application/json')
 
 
 @app.route("/apiv1/resortConditions/<name>", methods=['GET', 'POST'])
 def resortConditions(name):
-    # Reading conditions from conditions cache
-    # TODO: Define the columns in the conditions cache rows
-    #conditions = db[name]
-    #open_trails = conditions['trailsOpen']
-    open_trails = '14'
-    wind = '24W'
-    #wind = conditions['wind']
-    new_snow = '14'
-    #new_snow = conditions['newSnow']
+    request_json = request.get_json()
+    appID = request_json['App ID']
+    apiKey = request_json['API']
 
-    data_out = {
-        'resort': name,
-        'trailsOpen': open_trails,
-        'wind':  wind,
-        'new_snow_in_resort': new_snow}
+    conditions_cached_response = json.loads(db_conditions[name])
 
-    # if API info is passed in then get weather unlocked info about resort 
-    json = request.get_json()
+    # Calculate the time difference between when we last updated the cache and now, if > 30 minutes refresh
+    last_updated_time = conditions_cached_response['lastUpdatedTime']
 
-    if json is not None:
-        appID = json['App ID']
-        apiKey = json['API']
-        weather_data = getWeatherInfo(db_resort[name].split(','), appID = appID, APP_KEY = apiKey)
+    current_time = datetime.datime.now()
+    time_difference_minutes = (current_time - last_updated_time).total_seconds() / 60
 
-        data_out.update(weather_data)
-    print(data_out)
+    if time_difference_minutes > 30:
+        conditions_message = {'resorts': [name],
+                              'App ID': appID,
+                              'API': apiKey}
 
+        log_debug(f"Creating new conditions request for worker.")
+        sendToWorker(conditions_message)
+
+    data_out = conditions_cached_response['conditions']
     response = jsonpickle.encode(data_out)
 
     return Response(response=response, status=200, mimetype='application/json')

@@ -33,6 +33,11 @@ def mkReq(reqmethod, endpoint, data):
             f"response code is {response.status_code}, raw response is {response.text}")
         return response.text
 
+mkReq(requests.post, "apiv1/initConditionsDB",
+      data = {'resorts': ['Eldora', 'Steamboat', 'Copper', 'Winter Park'],
+             'appID': 'd8bd1a82',
+             'apiKey': '3a31bf0c1217741c8d00c206034ca4ca'})
+
 mkReq(requests.get, "apiv1/initResortDB",
       data = {'Eldora': '39.938086,-105.584282',
               'Steamboat': '40.455464,-106.808369',
@@ -47,7 +52,10 @@ mkReq(requests.get, "apiv1/traffic",
           "API": ''
       })
 
-# mkReq(requests.get, "apiv1/getSkiSuggestions", data=None)
+mkReq(requests.get, "apiv1/getSkiSuggestions", data={
+    'App ID': 'd8bd1a82',
+    'API': '3a31bf0c1217741c8d00c206034ca4ca'
+})
 
 mkReq(requests.get, "apiv1/resortConditions/Eldora",
       data={

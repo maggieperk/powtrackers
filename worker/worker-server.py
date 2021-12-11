@@ -2,6 +2,7 @@
 # Worker server
 #
 from fetch_current_conditions import scrape_resort_conditions_page
+from weatherUnlockedAPI import getWeatherInfo
 
 import datetime
 import jsonpickle
@@ -21,10 +22,12 @@ rabbitMQHost = os.getenv("RABBITMQ_HOST") or "localhost"
 
 print(f"Connecting to rabbitmq({rabbitMQHost}) and redis({redisHost})")
 
+
 ##
 ## Set up redis connections
 ##
-db = redis.Redis(host=redisHost, db=1)                                                                           
+db_resort = redis.Redis(host=redisHost, db=0, decode_responses=True)
+db_conditions = redis.Redis(host=redisHost, db=1, decode_responses=True)
 
 ##
 ## Set up rabbitmq connection
@@ -38,10 +41,24 @@ rabbitMQChannel.exchange_declare(exchange='logs', exchange_type='topic')
 infoKey = f"{platform.node()}.worker.info"
 debugKey = f"{platform.node()}.worker.debug"
 
+
+# Initialize Resort DB
+resort_info = {'Eldora': '39.938086,-105.584282',
+ 'Steamboat': '40.455464,-106.808369',
+ 'Copper': '39.498871,-106.139443',
+ 'Winter Park': '39.886346,-105.761533'
+ }
+
+print("Initializing the Resort DB")
+for key in resort_info:
+    db_resort.set(key, resort_info[key])
+
 def log_debug(message, key=debugKey):
     print("DEBUG:", message, file=sys.stdout)
     rabbitMQChannel.basic_publish(
         exchange='logs', routing_key=key, body=message)
+
+
 def log_info(message, key=infoKey):
     print("INFO:", message, file=sys.stdout)
     rabbitMQChannel.basic_publish(
@@ -59,21 +76,27 @@ def callback(ch, method, properties, body): # from https://www.rabbitmq.com/tuto
     processMessage(resort_dict)
     
 
-def processMessage(resort_dict):
-    resorts_list = resort_dict['resorts']
+def processMessage(queue_message):
+    resorts_list = queue_message['resorts']
+    appID = queue_message['App ID']
+    apiKey = queue_message['API']
 
     for resort in resorts_list:
         try:
             log_debug(f"Fetching conditions for {resort}")
             resort_conditions = scrape_resort_conditions_page(resort)
+            weather_conditions = getWeatherInfo(db_resort[resort].split(','), appID=appID, APP_KEY=apiKey)
             current_time = datetime.datetime.now()
             condition_dict = {
-                'conditions': resort_conditions,
-                'lastRefreshedTime': current_time
+                "conditions": {
+                    "resortConditions": resort_conditions,
+                    "weather": weather_conditions},
+                "lastRefreshedTime": current_time
             }
             log_debug(f"Resort conditions are: {condition_dict}")
+            log_debug(f"Weather conditions are: {weather_conditions}")
             log_debug(f"Writing conditions to cache for {resort}.")
-            db.set(resort, str(condition_dict))
+            db_conditions.set(resort, str(condition_dict))
             log_info(f"Successfully fetched conditions for {resort} and updated cache.")
         except Exception as e:
             log_info(f"Exception while trying to process conditions for {resort}: {e}")
