@@ -147,7 +147,6 @@ def getResortTraffic():
             gps_end = db_locations[key]
 
             trafficInfo = getTravelInfo({start_location : gps_start.split(',')}, {key : gps_end.split(',')}, API_KEY = apiKey)
-            print(key, trafficInfo[key]['time'])
             db_traffic.set(key, str(trafficInfo[key]))
             response[key] = trafficInfo[key]['time']
 

@@ -37,7 +37,6 @@ def getTravelInfo(coordinates_start, coordinates_end, API_KEY = ''):
     # Process the response and return as dictionary
 
     resortTrafficInfo = {}
-    print(coordinates_start, coordinates_end)
 
     for key in coordinates_end.keys():
         resortTrafficInfo[key] = {"origin": response["origin_addresses"][0]}
