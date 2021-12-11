@@ -10,8 +10,6 @@ from weatherUnlockedAPI import getWeatherInfo
 # Initialize the Flask application
 app = Flask(__name__)
 
-coordinates_start = {'ECCR': ['40.007719', '-105.261416']}
-
 # import logging
 # log = logging.getLogger('werkzeug')
 # log.setLevel(10) # should be the same as logging.DEBUG
@@ -27,8 +25,9 @@ redisHost = os.getenv("REDIS_HOST") or "localhost"
 ##
 ## Set up redis connections
 ##
-db_resort = redis.Redis(host=redisHost, db=0, decode_responses=True)
+db_locations = redis.Redis(host=redisHost, db=0, decode_responses=True)
 db_conditions = redis.Redis(host=redisHost, db=1, decode_responses=True)
+db_traffic = redis.Redis(host=redisHost, db=2, decode_responses=True)
 
 ##
 ## Set up rabbitmq connection
@@ -66,7 +65,7 @@ def sendToWorker(message_dict):
 def initResortDB():
     json = request.get_json()
     for key in json.keys():
-        db_resort.set(key, json[key])
+        db_locations.set(key, json[key])
 
     response = jsonpickle.encode({'response': 'Resort DB initialized.'})
     return Response(response=response, status=200, mimetype='application/json')
@@ -125,7 +124,7 @@ def resortConditions(name):
     if json is not None:
         appID = json['App ID']
         apiKey = json['API']
-        weather_data = getWeatherInfo(db_resort[name].split(','), appID = appID, APP_KEY = apiKey)
+        weather_data = getWeatherInfo(db_locations[name].split(','), appID = appID, APP_KEY = apiKey)
 
         data_out.update(weather_data)
     print(data_out)
@@ -138,20 +137,21 @@ def resortConditions(name):
 def getResortTraffic():
     json = request.get_json()
     start_location = json['start']
-    destination_resort = json['resort']
     apiKey = json["API"]
 
-    gps_start = coordinates_start[start_location]
-    gps_end = db_resort.get(destination_resort)
+    response = {"start_location": start_location}
 
-    trafficInfo = getTravelInfo({start_location : gps_start}, {destination_resort : gps_end.split(',')}, API_KEY = apiKey)
+    gps_start = db_locations.get(start_location)
+    for key in db_locations.keys():
+        if key != start_location:
+            gps_end = db_locations[key]
 
-    response = jsonpickle.encode({
-        "start_location": start_location,
-        "resort": destination_resort,
-        "destination_coords": gps_end,
-        "distance": trafficInfo[destination_resort]['miles'],
-        "traffic_time": trafficInfo[destination_resort]['time']})
+            trafficInfo = getTravelInfo({start_location : gps_start.split(',')}, {key : gps_end.split(',')}, API_KEY = apiKey)
+            print(key, trafficInfo[key]['time'])
+            db_traffic.set(key, str(trafficInfo[key]))
+            response[key] = trafficInfo[key]['time']
+
+    response = jsonpickle.encode(response)
 
     return Response(response = response, status=200, mimetype='application/json')
 

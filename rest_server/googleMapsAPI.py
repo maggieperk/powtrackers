@@ -30,13 +30,15 @@ def getTravelInfo(coordinates_start, coordinates_end, API_KEY = ''):
         response = response.json()
 
     else:
-        # TESTING PARSE OF OUTPUT W/OUT HAVING TO SUBMIT API REQUEST
+        # TESTING PARSE OF OUTPUT W/OUT HAVING TO SUBMIT API REQUEST; breaks if only 1 is passed in; will return eldora everytime lol
 
         response = json.load(open('../testingAPIs/sampleMaps.json'))
 
     # Process the response and return as dictionary
 
     resortTrafficInfo = {}
+    print(coordinates_start, coordinates_end)
+
     for key in coordinates_end.keys():
         resortTrafficInfo[key] = {"origin": response["origin_addresses"][0]}
 
