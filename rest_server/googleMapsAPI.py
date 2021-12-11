@@ -30,17 +30,23 @@ def getTravelInfo(coordinates_start, coordinates_end, API_KEY = ''):
         response = response.json()
 
     else:
-        # TESTING PARSE OF OUTPUT W/OUT HAVING TO SUBMIT API REQUEST
+        # TESTING PARSE OF OUTPUT W/OUT HAVING TO SUBMIT API REQUEST; breaks if only 1 is passed in; will return eldora everytime lol
 
         response = json.load(open('../testingAPIs/sampleMaps.json'))
 
     # Process the response and return as dictionary
 
     resortTrafficInfo = {}
+
     for key in coordinates_end.keys():
         resortTrafficInfo[key] = {"origin": response["origin_addresses"][0]}
 
-    for k, key in enumerate(resortTrafficInfo.keys()):
+    for key in resortTrafficInfo.keys():
+
+        k = 0
+        for i, destination in enumerate(response['destination_addresses']):
+            if key in destination:
+                k = i
 
         distance_kms = response["rows"][0]["elements"][k]["distance"]["text"].split(' ')
         resortTrafficInfo[key]['miles'] = float(distance_kms[0])*0.621371

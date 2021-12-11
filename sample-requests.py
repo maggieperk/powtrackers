@@ -42,13 +42,13 @@ mkReq(requests.get, "apiv1/initResortDB",
       data = {'Eldora': '39.938086,-105.584282',
               'Steamboat': '40.455464,-106.808369',
               'Copper': '39.498871,-106.139443',
-               'Winter Park': '39.886346,-105.761533'
+               'Winter Park': '39.886346,-105.761533',
+               'ECCR': '40.007719,-105.261416'
             })
 
 mkReq(requests.get, "apiv1/traffic",
       data={
           "start": "ECCR",
-          "resort": "Eldora",
           "API": ''
       })
 
