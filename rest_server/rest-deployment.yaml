@@ -14,9 +14,7 @@ spec:
     spec:
       containers:
       - name: rest-server
-        image: karenlstengel/powtrackers-rest:latest # REBUILD THIS
-        imagePullPolicy: Never # for running locally and with locally built images
-
+        image: karenlstengel/powtrackers-rest:latest 
         env:
         - name: REDIS_HOST
           value: redis
