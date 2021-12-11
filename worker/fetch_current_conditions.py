@@ -98,10 +98,10 @@ def parse_raw_html_for_conditions(raw_hmtl):
 # Format the current weather conditions to a standard JSON style
 def format_conditions_json(new_snow_inches, wind_speed, lifts_open, trails_open):
     conditions_json = {
-        "NewSnowInches": str(new_snow_inches),
-        "WindSpeed": str(wind_speed),
-        "LiftsOpen": str(lifts_open),
-        "TrailsOpen": str(trails_open)
+        "NewSnowInches": float(new_snow_inches),
+        "WindSpeed": int(wind_speed),
+        "LiftsOpen": int(lifts_open),
+        "TrailsOpen": int(trails_open)
     }
     return conditions_json
 
@@ -150,12 +150,12 @@ def read_copper_conditions(raw_html):
     conditions_soup = BeautifulSoup(raw_html, 'html.parser')
 
     # Find New Snow Value
-    new_snow_inches = -1
+    new_snow_inches = -1.0
     weather_widget_tags = conditions_soup.find_all('div', class_='widget-weather')
     for w_tag in weather_widget_tags:
         status_tag = w_tag.find('p', class_="status m-")
         if status_tag.text == 'snow':
-            new_snow_inches = w_tag.find('span', class_="integer m-").text
+            new_snow_inches = re.search(r'\d+(.\d+)?', w_tag.find('span', class_="integer m-").text)[0]
 
     # Wind Speed from Copper is not present on their website
     wind_speed = -1
@@ -199,7 +199,7 @@ def read_eldora_conditions(raw_html):
 
     # Search for wind and snow
     wind_speed = -1
-    new_snow_inches = 0
+    new_snow_inches = 0.0
 
     wind_match_found = False
     snow_match_found = False

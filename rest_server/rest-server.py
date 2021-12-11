@@ -126,25 +126,28 @@ def score_wind_speed(wind_speed):
 
 # Rank the conditions from the given mapping of resort conditions
 def rank_conditions(conditions_map, traffic_map):
-    conditions_scoring_dict = {key: 0 for key in conditions_map.keys}
-    resorts = conditions_map.keys
+    conditions_scoring_dict = dict()
+    for key in conditions_map.keys():
+        conditions_scoring_dict[key] = 0
+
+    resorts = conditions_map.keys()
 
     # Build metric dictionaries
     for r in resorts:
         # Snow Inches * 10 (Snow has highest weight value in conditions)
-        snow_score = double(conditions_map[r]['conditions']['weather']['snow_total_in']) * 10.0
+        snow_score = conditions_map[r]['weather']['snow_total_in'] * 10.0
 
         # Score is from 2 to 10
-        max_temp = conditions_map[r]['conditions']['weather']['temp_max_f']
+        max_temp = conditions_map[r]['weather']['temp_max_f']
         max_temp_score = score_max_temp(max_temp)
 
         # Score is from 2 to 10
-        wind_speed = conditions_map[r]['conditions']['weather']['windspd_max_mph']
+        wind_speed = conditions_map[r]['weather']['windspd_max_mph']
         wind_speed_score = score_wind_speed(wind_speed)
 
         # Score is equivalent to total amount of open terrain
-        open_terrain_score = conditions_map[r]['conditions']['resortConditions']['OpenLifts'] + \
-                                  conditions_map[r]['conditions']['resortConditions']['OpenTrails']
+        open_terrain_score = int(conditions_map[r]['resortConditions']['LiftsOpen']) + \
+                                  int(conditions_map[r]['resortConditions']['TrailsOpen'])
 
         mountain_score = snow_score + max_temp_score + wind_speed_score + open_terrain_score
         conditions_scoring_dict[r] = mountain_score
@@ -154,7 +157,7 @@ def rank_conditions(conditions_map, traffic_map):
     traffic_rank = [resort for resort, traffic_time in traffic_tuples]
 
     for r in resorts:
-        traffic_score = (traffic_rank.find(r) + 1) * 2
+        traffic_score = (traffic_rank.index(r) + 1) * 2
         conditions_scoring_dict[r] = conditions_scoring_dict[r] + traffic_score
 
     # Rank the resorts based on total conditions values
@@ -177,14 +180,16 @@ def getSkiSuggestions():
     resorts_to_update = []
     all_resorts = db_conditions.keys()
     for key in all_resorts:
-        cache_value = json.loads(db_conditions[key])
+        db_entry = db_conditions[key]
+        print(db_entry)
+        cache_value = json.loads(db_conditions[key].replace("'", '"'))
         resort_conditions = cache_value['conditions']
-        last_updated_time = cache_value['lastUpdatedTime']
+        last_updated_time = cache_value['lastRefreshedTime']
         conditions[key] = resort_conditions
 
         # Calculate the time difference between when we last updated the cache and now, if > 30 minutes refresh
-        current_time = datetime.datime.now()
-        time_difference_minutes = (current_time - last_updated_time).total_seconds() / 60
+        current_time = datetime.datetime.now()
+        time_difference_minutes = (current_time.timestamp() - last_updated_time) / 60
 
         if time_difference_minutes > 30:
             resorts_to_update.append(key)
@@ -215,13 +220,13 @@ def resortConditions(name):
     appID = request_json['App ID']
     apiKey = request_json['API']
 
-    conditions_cached_response = json.loads(db_conditions[name])
+    conditions_cached_response = json.loads(db_conditions[name].replace("'", '"'))
 
     # Calculate the time difference between when we last updated the cache and now, if > 30 minutes refresh
-    last_updated_time = conditions_cached_response['lastUpdatedTime']
+    last_updated_timestamp = conditions_cached_response['lastRefreshedTime']
 
-    current_time = datetime.datime.now()
-    time_difference_minutes = (current_time - last_updated_time).total_seconds() / 60
+    current_time = datetime.datetime.now()
+    time_difference_minutes = (current_time.timestamp() - last_updated_timestamp) / 60
 
     if time_difference_minutes > 30:
         conditions_message = {'resorts': [name],

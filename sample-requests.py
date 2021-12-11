@@ -35,8 +35,8 @@ def mkReq(reqmethod, endpoint, data):
 
 mkReq(requests.post, "apiv1/initConditionsDB",
       data = {'resorts': ['Eldora', 'Steamboat', 'Copper', 'Winter Park'],
-             'appID': 'd8bd1a82',
-             'apiKey': '3a31bf0c1217741c8d00c206034ca4ca'})
+             'App ID': 'd8bd1a82',
+             'API': '3a31bf0c1217741c8d00c206034ca4ca'})
 
 mkReq(requests.get, "apiv1/initResortDB",
       data = {'Eldora': '39.938086,-105.584282',

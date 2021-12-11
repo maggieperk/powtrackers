@@ -86,7 +86,7 @@ def processMessage(queue_message):
             log_debug(f"Fetching conditions for {resort}")
             resort_conditions = scrape_resort_conditions_page(resort)
             weather_conditions = getWeatherInfo(db_resort[resort].split(','), appID=appID, APP_KEY=apiKey)
-            current_time = datetime.datetime.now()
+            current_time = datetime.datetime.now().timestamp()
             condition_dict = {
                 "conditions": {
                     "resortConditions": resort_conditions,
