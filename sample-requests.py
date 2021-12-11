@@ -44,7 +44,7 @@ mkReq(requests.get, "apiv1/initResortDB",
 mkReq(requests.get, "apiv1/traffic",
       data={
           "start": "ECCR",
-          "API": 'AIzaSyAxjuRYGbP3GMzv1o7__kBu0nL2qvy4_TA'
+          "API": ''
       })
 
 # mkReq(requests.get, "apiv1/getSkiSuggestions", data=None)
