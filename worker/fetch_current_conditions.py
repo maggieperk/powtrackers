@@ -118,7 +118,7 @@ def read_winter_park_conditions(raw_html):
         if tag_label:
             tag_label_text = tag_label.get_text()
             if tag_label_text == "Wind Speed":
-                wind_speed = tag.find('span', class_='value').get_text()
+                wind_speed = re.search(r'\d+', tag.find('span', class_='value').get_text())[0]
                 continue
         else:
             continue
@@ -127,7 +127,11 @@ def read_winter_park_conditions(raw_html):
     new_snow_inches = expected_snowfall_list_item.find('div', class_="switchable-stat-item switchable-stat-imperial")\
         .find('span', class_="value")\
         .get_text()
-    print(new_snow_inches)
+
+    # When no snow is expected at Winter Park, they report "--" instead of a numeric value
+    if new_snow_inches == '--':
+        new_snow_inches = 0
+
     # list tag for open lifts and trails
     trail_conditions_tags = conditions_soup.find_all('li', class_="conditions-trails-content-others-metric")
 
