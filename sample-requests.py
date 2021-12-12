@@ -45,9 +45,7 @@ mkReq(requests.get, "apiv1/initResortDB",
               'Winter Park': '39.886346,-105.761533',
               'ECCR': '40.007719,-105.261416'
             })
-print('Sleeping...', end='')
-time.sleep(100) # should fix this. should wait for response from rabbitMQ?
-print('Awake!')
+time.sleep(20)
 
 mkReq(requests.get, "apiv1/traffic",
       data={

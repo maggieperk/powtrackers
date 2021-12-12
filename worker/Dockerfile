@@ -8,6 +8,10 @@ RUN pyppeteer-install
 COPY worker-server.py .
 COPY weatherUnlockedAPI.py .
 COPY fetch_current_conditions.py .
+COPY EldoraConditions.txt .
+COPY SteamboatConditions.txt .
+COPY CopperConditions.txt .
+COPY WinterParkConditions.txt .
 
 ENV PYTHONUNBUFFERED=1
 CMD [ "python3", "worker-server.py"]
