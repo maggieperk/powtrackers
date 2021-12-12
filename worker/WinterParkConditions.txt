@@ -1,0 +1,1316 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head><script src="/Botchd-Macd-a-Fee-Sour-eacesse-This-arestrance-I" async></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta charset="UTF-8" />
+    <meta name="google" content="notranslate" />
+    <meta http-equiv="Content-Language" content="en_US" />
+    <!--[if lte IE 9]><link rel="shortcut icon" href="/public/winter_park/images/favicon.ico"><![endif]-->
+    <link rel="icon" href="/public/winter_park/images/favicon.png">
+    <link rel="apple-touch-icon" href="/public/winter_park/images/favicon.png">
+    <link rel="preload" href="/public/Shared/fonts/intrawest-icons/intrawest-icons.woff?5y3be8" as="font" crossorigin>
+    <link rel="preload" href="/public/Shared/fonts/font-awesome/fa-light-300.woff" as="font" crossorigin>
+    <link rel="preload" href="/public/Shared/fonts/font-awesome/fa-regular-400.woff" as="font" crossorigin>
+    <link rel="preload" href="/public/Shared/fonts/font-awesome/fa-solid-900.woff" as="font" crossorigin>
+
+<link rel="canonical" href="https://www.winterparkresort.com/the-mountain/mountain-report" />
+    <title>Lift, Trail, Weather and Cams at Winter Park Resort</title>
+    <meta name="description" content="Winter Park Resort&#39;s official Lift, Trail, Webcams and Weather Report. Find out whats happening at the resort!" />
+
+    <link type="text/css" rel="stylesheet" href="/public/winter_park/css/winter_park.css?v=2574.2366" />
+    <link type="text/css" rel="stylesheet" href="/public/Shared/font-awesome/css/fontawesome.min.css" />
+
+
+    
+
+    <!-- Open Graph Meta Tags -->
+    <!-- End Open Graph Meta Tags -->
+
+
+    
+    
+    
+</head>
+<body class=" ">
+<script src="https://cookies.alterramtnco.com/adobe_combined.js"></script>
+
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-NCXQ87"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NCXQ87');</script>
+<!-- End Google Tag Manager -->
+
+
+
+<!-- Import the Inbenta Chatbot SDK (works with SDK version 1.41.0, but you can try the last one listed [here](https://developers.inbenta.io/chatbot/javascript-sdk/sdk-subresource-integrity)) -->
+  <script defer src="https://sdk.inbenta.io/chatbot/1.48.0/inbenta-chatbot-sdk.js"
+    integrity="sha384-NYOYue1v7MGXivobfyJJBadSRIWgJNao+cwD5lZujDt4FgsuAwlhOaBdSmdQTS7O"
+    crossorigin="anonymous"></script>
+
+  <!-- Import InContact adapter -->
+  
+  <script defer type="text/javascript" src="https://cookies.alterramtnco.com/winterpark/incontact-adapter.js"></script>
+  <script defer type="text/javascript" src="https://cookies.alterramtnco.com/winterpark/config.js"></script>
+  <link rel="stylesheet" href="https://cookies.alterramtnco.com/winterpark/bot_styles.css">
+
+
+
+    
+    <header class="main-v2 header-v2 header-theme-light" aria-label="Header">
+    <span class="main-v2-color-bar main-v2-bar"></span>
+    <span class="main-v2-shadow-bar main-v2-bar"></span>
+    <a class="sr-only sr-only-focusable skip-link" href="#main-content">Skip To Main Content</a>
+    
+
+
+<div class="hamburger-wrapper">
+    <button class="hamburger">
+        <span class="hamburger-top"></span>
+        <span class="hamburger-middle">Toggle</span>
+        <span class="hamburger-bottom">Menu</span>
+    </button>
+</div>
+<div class="header-menu header-menu-body" data-desktop-bg-img="/-/media/widen/winter-park/stock-photography/2019-03-15-wp-jamespeak-ebrumm.ashx?h=1350&amp;w=2400&amp;hash=380908BAD42D8A6D2C9979F39ADDBD02" data-mobile-bg-img="/-/media/widen/winter-park/stock-photography/2019-03-15-wp-jamespeak-ebrumm.ashx?h=421&amp;w=750&amp;hash=F82507B1C4F3F36910413672DF2C2E49">
+    <div class="header-menu-scroller" style="" data-background-opacity="70%">
+        <div class="header-menu-scroller-inner">
+            <div class="header-menu-row">
+                <div class="search-bar-v2-mobile">
+    <div class="container">
+            <form action="/search" method="GET" target="_parent">
+                <div class="input-wrapper">
+                    <div class="search-start icon"></div>
+                    <input class="header-menu-search" name="query" type="text" title="Type to search" aria-label="Type to search" placeholder="Type to search" autocomplete="off" />
+                    <button class="close hidden">Close</button>
+                    <button class="search-end submit" aria-label="Search">
+                        <span class="icon ico-right_arrow_large"></span>
+                    </button>
+                    
+
+                    <div class="predictive-search-results-wrapper">
+                        <ul class="predictive-search-results"></ul>
+                        <div class="predictive-search-see-more">
+                            <a href="/search">See More Results ❯</a>
+                        </div>
+                    </div>
+                </div>
+            </form>
+    </div>
+</div>
+
+            </div>
+            <div class="header-menu-row">
+                <div class="header-menu-column navigation-deal-bottom">
+                    
+
+<div class="primary-nav-links">
+            <div class="primary-nav-links-column" style="width:25%">
+                    <div class="heading"><a class="primary-nav-links-link" href="/discover">Explore Winter Park</a></div>
+
+                     <ul class="header-menu-submenu">
+                            <li><a class="header-menu-submenu-link" href="/discover/winter">Winter</a></li>
+                            <li><a class="header-menu-submenu-link" href="/discover/spring" target="_parent">Spring</a></li>
+                            <li><a class="header-menu-submenu-link" href="/discover/summer">Summer</a></li>
+                            <li><a class="header-menu-submenu-link" href="/discover/fall">Fall</a></li>
+                            <li><a class="header-menu-submenu-link" href="/discover/plan-your-adventure">First Timers Guide</a></li>
+                            <li><a class="header-menu-submenu-link" href="https://blog.winterparkresort.com/">Venture Out Blog</a></li>
+                            <li><a class="header-menu-submenu-link" href="/app" target="_parent">Winter Park App</a></li>
+                      </ul>
+             </div>
+            <div class="primary-nav-links-column" style="width:25%">
+                    <div class="heading"><a class="primary-nav-links-link testing-style-class another and-another" href="/the-mountain">The mountain</a></div>
+
+                     <ul class="header-menu-submenu">
+                            <li><a class="header-menu-submenu-link" href="/the-mountain/mountain-cams">Live Cams</a></li>
+                            <li><a class="header-menu-submenu-link" href="/the-mountain/mountain-report/#/">Conditions &amp; Maps</a></li>
+                            <li><a class="header-menu-submenu-link" href="/the-mountain/mountain-information">Mountain Information</a></li>
+                            <li><a class="header-menu-submenu-link" href="/the-mountain/hours-of-operation">Hours of Operation</a></li>
+                            <li><a class="header-menu-submenu-link" href="/plan-your-trip/getting-here">Getting Here</a></li>
+                            <li><a class="header-menu-submenu-link" href="/the-mountain/seven-territories">Seven Territories</a></li>
+                            <li><a class="header-menu-submenu-link" href="/winter-season-plans" target="_parent">Winter Season Plans</a></li>
+                      </ul>
+             </div>
+            <div class="primary-nav-links-column" style="width:25%">
+                    <div class="heading"><a class="primary-nav-links-link test-class" href="/plan-your-trip">Plan your trip</a></div>
+
+                     <ul class="header-menu-submenu">
+                            <li><a class="header-menu-submenu-link" href="/plan-your-trip/lodging" target="_parent">Lodging</a></li>
+                            <li><a class="header-menu-submenu-link" href="/plan-your-trip/deals-and-packages" target="_parent">Deals &amp; Packages</a></li>
+                            <li><a class="header-menu-submenu-link" href="/plan-your-trip/tickets-and-passes" target="_parent">Tickets &amp; Passes</a></li>
+                            <li><a class="header-menu-submenu-link" href="/plan-your-trip/lessons/ski-and-ride-school" target="_parent">Lessons</a></li>
+                            <li><a class="header-menu-submenu-link" href="/plan-your-trip/rentals/ski-and-board" target="_parent">Rentals</a></li>
+                            <li><a class="header-menu-submenu-link" href="/plan-your-trip/carefree-cancellation" target="_parent">Carefree Cancellation</a></li>
+                            <li><a class="header-menu-submenu-link" href="/plan-your-trip/groups-and-weddings">Groups &amp; Weddings</a></li>
+                      </ul>
+             </div>
+            <div class="primary-nav-links-column" style="width:25%">
+                    <div class="heading"><a class="primary-nav-links-link" href="/things-to-do">Things to do</a></div>
+
+                     <ul class="header-menu-submenu">
+                            <li><a class="header-menu-submenu-link" href="/things-to-do/activities">Activities</a></li>
+                            <li><a class="header-menu-submenu-link" href="/things-to-do/dining">Dining</a></li>
+                            <li><a class="header-menu-submenu-link" href="/things-to-do/wpguides" target="_parent">Adventure &amp; Supply Co.</a></li>
+                            <li><a class="header-menu-submenu-link" href="/things-to-do/shopping">Shopping</a></li>
+                            <li><a class="header-menu-submenu-link" href="/things-to-do/events">Events</a></li>
+                            <li><a class="header-menu-submenu-link" href="/things-to-do/competition-center">Competition Center</a></li>
+                      </ul>
+             </div>
+</div>
+<div class="primary-nav-links-mobile">
+    <div class="nav-carousel enable-peaking">
+            <div class="slide">
+                <div class="slide-content">
+                    <div class="heading slide-content-title"><a class="primary-nav-links-link" href="/discover">Explore Winter Park</a></div>
+                        <ul class="slide-content-list">
+                                <li class="slide-content-list-item"><a class="header-menu-submenu-link" href="/discover/winter">Winter</a></li>
+                                <li class="slide-content-list-item"><a class="header-menu-submenu-link" href="/discover/spring" target="_parent">Spring</a></li>
+                                <li class="slide-content-list-item"><a class="header-menu-submenu-link" href="/discover/summer">Summer</a></li>
+                                <li class="slide-content-list-item"><a class="header-menu-submenu-link" href="/discover/fall">Fall</a></li>
+                                <li class="slide-content-list-item"><a class="header-menu-submenu-link" href="/discover/plan-your-adventure">First Timers Guide</a></li>
+                                <li class="slide-content-list-item"><a class="header-menu-submenu-link" href="https://blog.winterparkresort.com/">Venture Out Blog</a></li>
+                                <li class="slide-content-list-item"><a class="header-menu-submenu-link" href="/app" target="_parent">Winter Park App</a></li>
+                        </ul>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="slide-content">
+                    <div class="heading slide-content-title"><a class="primary-nav-links-link testing-style-class another and-another" href="/the-mountain">The mountain</a></div>
+                        <ul class="slide-content-list">
+                                <li class="slide-content-list-item"><a class="header-menu-submenu-link" href="/the-mountain/mountain-cams">Live Cams</a></li>
+                                <li class="slide-content-list-item"><a class="header-menu-submenu-link" href="/the-mountain/mountain-report/#/">Conditions &amp; Maps</a></li>
+                                <li class="slide-content-list-item"><a class="header-menu-submenu-link" href="/the-mountain/mountain-information">Mountain Information</a></li>
+                                <li class="slide-content-list-item"><a class="header-menu-submenu-link" href="/the-mountain/hours-of-operation">Hours of Operation</a></li>
+                                <li class="slide-content-list-item"><a class="header-menu-submenu-link" href="/plan-your-trip/getting-here">Getting Here</a></li>
+                                <li class="slide-content-list-item"><a class="header-menu-submenu-link" href="/the-mountain/seven-territories">Seven Territories</a></li>
+                                <li class="slide-content-list-item"><a class="header-menu-submenu-link" href="/winter-season-plans" target="_parent">Winter Season Plans</a></li>
+                        </ul>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="slide-content">
+                    <div class="heading slide-content-title"><a class="primary-nav-links-link test-class" href="/plan-your-trip">Plan your trip</a></div>
+                        <ul class="slide-content-list">
+                                <li class="slide-content-list-item"><a class="header-menu-submenu-link" href="/plan-your-trip/lodging" target="_parent">Lodging</a></li>
+                                <li class="slide-content-list-item"><a class="header-menu-submenu-link" href="/plan-your-trip/deals-and-packages" target="_parent">Deals &amp; Packages</a></li>
+                                <li class="slide-content-list-item"><a class="header-menu-submenu-link" href="/plan-your-trip/tickets-and-passes" target="_parent">Tickets &amp; Passes</a></li>
+                                <li class="slide-content-list-item"><a class="header-menu-submenu-link" href="/plan-your-trip/lessons/ski-and-ride-school" target="_parent">Lessons</a></li>
+                                <li class="slide-content-list-item"><a class="header-menu-submenu-link" href="/plan-your-trip/rentals/ski-and-board" target="_parent">Rentals</a></li>
+                                <li class="slide-content-list-item"><a class="header-menu-submenu-link" href="/plan-your-trip/carefree-cancellation" target="_parent">Carefree Cancellation</a></li>
+                                <li class="slide-content-list-item"><a class="header-menu-submenu-link" href="/plan-your-trip/groups-and-weddings">Groups &amp; Weddings</a></li>
+                        </ul>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="slide-content">
+                    <div class="heading slide-content-title"><a class="primary-nav-links-link" href="/things-to-do">Things to do</a></div>
+                        <ul class="slide-content-list">
+                                <li class="slide-content-list-item"><a class="header-menu-submenu-link" href="/things-to-do/activities">Activities</a></li>
+                                <li class="slide-content-list-item"><a class="header-menu-submenu-link" href="/things-to-do/dining">Dining</a></li>
+                                <li class="slide-content-list-item"><a class="header-menu-submenu-link" href="/things-to-do/wpguides" target="_parent">Adventure &amp; Supply Co.</a></li>
+                                <li class="slide-content-list-item"><a class="header-menu-submenu-link" href="/things-to-do/shopping">Shopping</a></li>
+                                <li class="slide-content-list-item"><a class="header-menu-submenu-link" href="/things-to-do/events">Events</a></li>
+                                <li class="slide-content-list-item"><a class="header-menu-submenu-link" href="/things-to-do/competition-center">Competition Center</a></li>
+                        </ul>
+                </div>
+            </div>
+    </div>
+    
+</div>
+
+<var aria-hidden="true" class="js_components hidden">
+    primary-nav-links-mobile
+</var>
+                </div>
+            </div>
+                <div class="header-menu-row">
+                    <div class="header-menu-column last navigation-deal-bottom">
+                            <div class="navigation-deal">
+        <div class="navigation-deal-img-wrapper">
+                <img class="navigation-deal-img" src="/-/media/winter-park/winter2122/familyinfrontofparrysfull.ashx?h=784&amp;w=1176&amp;hash=6549A1D3F6BC2B13FBD4FFDD55A5011C" alt="Family in front of Parry Peak" />
+                    </div>
+        <div class="navigation-deal-info">
+            <p><span class="text title">4th Night &amp; Ski Day Free</span></p>
+            <p><span class="text">Get your 4th night of lodging &amp; 4th day of lift access, FREE!</span></p>
+                    <div class="button-wrap--center">
+                            <div class="button-wrap--center">
+        <a class="navigation-deal-button button default" href="/plan-your-trip/deals-and-packages/free-4-all" target="_self">
+            <span class="background"></span>
+            <span class="text">Book Now</span>
+        </a>
+    </div>
+
+                    </div>
+        </div>
+    </div>
+
+
+                    </div>
+                </div>
+            <div class="header-menu-cta header-menu-row">
+                <div class="header-menu-column">
+                    <div class="header-menu-row planner-and-login">
+                            <a class="add-to-planner d-none" href="/plan-your-trip/my-planner" aria-hidden="true" tabindex="-1">
+            <span class="icon ico-planner"></span>
+        <div class="number-circle">0</div>
+        <span class="text">My Planner</span>
+    </a>   
+
+                            <a class="login-link" href="/sign-in" target="">
+        <span class="icon ico-login"></span>
+        <span class="text">Passholder Sign-In</span>
+    </a>
+
+                    </div>
+                </div>
+                <div class="header-menu-column last">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<var aria-hidden="true" class="js_components hidden">
+    header-hamburger,header-transparency
+</var>
+    
+
+    <div class="logo ">
+            <a href="/">
+                <img src="/-/media/winter-park/logos/winter-park-logos/300-winter-park-logo.ashx?h=169&amp;w=300&amp;hash=351253DD3F7027BE668B6A104D386A4E" class="desktop" alt="Winter Park Resort" title="Winter Park Resort" />
+                
+                <img src="/-/media/winter-park/logos/winter-park-logos/wp_logo_mobile.ashx?h=70&amp;la=en&amp;w=300&amp;hash=7A1281E5E7A6B4D68437D51308551BDE" class="mobile" alt="Winter Park Resort" title="Winter Park Resort" />
+            </a>
+    </div>
+
+
+
+    <style>
+        
+    </style>
+
+    <div class="nav-right has-transparent-menu">
+        
+
+<div class="condition-snippet-wrapper" data-switchable-stat-system-cookie-name="switchable-stat-system">
+    <div class="condition-snippet  ">
+            <span class="condition-snippet-description">Mid-Mountain</span>
+        <span class="condition-snippet-content ">
+                <span class="condition-snippet-content-icon icon ico-weather-skc"></span>
+                <span class="switchable-stat">
+                    <span class="switchable-stat-item switchable-stat-imperial ">
+                        <span class="condition-snippet-content-unit">27</span>
+                        <span class="condition-snippet-content-unitlabel condition-snippet-content-unitlabel--top">&#176;F</span>
+                    </span>
+                    <span class="switchable-stat-item switchable-stat-metric d-none">
+                        <span class="condition-snippet-content-unit">-3</span>
+                        <span class="condition-snippet-content-unitlabel condition-snippet-content-unitlabel--top">&#176;C</span>
+                    </span>
+                </span>
+                            <span class="condition-snippet-content-dropdown-icon-wrapper">
+                    <span class="condition-snippet-content-dropdown-icon-wrapper-icon"></span>
+                </span>
+        </span>
+    </div>
+        <div class="conditions-dropdown">
+            <div class="conditions-dropdown-scroller">
+                <div class="conditions-dropdown-scroller-inner">
+                    <div class="conditions-dropdown-content">
+
+
+<div class="conditions-weather conditions-section  ">
+    <div class="conditions-section-header">
+            <h4 class="conditions-section-header-text">Current Conditions</h4>
+        <span class="conditions-section-header-updated">
+            <span class="conditions-section-header-updated-date">Sun 12 Dec </span>
+            <span class="conditions-section-header-updated-time">3:47 PM MST</span>
+        </span>
+    </div>
+        <div class="conditions-section-subheader">
+            <span class="conditions-section-subheader-text">Currently</span>
+        </div>
+    <div class="weather-wrapper">
+        <div class="weather-current">
+            <div class="weather-conditions ">
+                <div class="weather-conditions-top">
+                    <span class="weather-conditions-top-icon icon ico-weather-skc"></span>
+                    <div class="weather-conditions-top-row">
+                        <div class="weather-conditions-top-row-temp">
+                                <div class="switchable-stat">
+        <div class="switchable-stat-item switchable-stat-imperial ">
+        <span class="value">27</span>
+        </div>
+        <div class="switchable-stat-item switchable-stat-metric d-none">
+        <span class="value">-3</span>
+        </div>
+    </div>
+
+                            <div class="weather-conditions-top-row-temp-metrics metric-toggle">
+                                <span class="metric-toggle-unit metric-toggle-unit--metric ">&#176;C</span>
+                                <span class="metric-toggle-unit metric-toggle-unit--imperial metric-toggle-unit--active">&#176;F</span>
+                            </div>
+                        </div>
+                        <span class="head-metric-description">Sunny</span>
+                    </div>
+                </div>
+                <ul class="weather-metrics ">
+                        <li class="weather-metrics-item">
+                                <div class="switchable-stat">
+        <div class="switchable-stat-item switchable-stat-imperial ">
+                <span class="label">Wind Direction</span>
+        <span class="value">NNW</span>
+        </div>
+        <div class="switchable-stat-item switchable-stat-metric d-none">
+                <span class="label">Wind Direction</span>
+        <span class="value">NNW</span>
+        </div>
+    </div>
+
+                        </li>
+                        <li class="weather-metrics-item">
+                                <div class="switchable-stat">
+        <div class="switchable-stat-item switchable-stat-imperial ">
+                <span class="label">Wind Speed</span>
+        <span class="value">7 mph</span>
+        </div>
+        <div class="switchable-stat-item switchable-stat-metric d-none">
+                <span class="label">Wind Speed</span>
+        <span class="value">11 kph</span>
+        </div>
+    </div>
+
+                        </li>
+                </ul>
+
+            </div>
+        <span class="weather-divider  d-block d-md-none"></span>
+            <div class="weather-snow ">
+                <div class="weather-snow-top">
+                    <div class="weather-snow-top-amount">
+                            <div class="switchable-stat">
+        <div class="switchable-stat-item switchable-stat-imperial ">
+        <span class="value">0</span>
+        </div>
+        <div class="switchable-stat-item switchable-stat-metric d-none">
+        <span class="value">0</span>
+        </div>
+    </div>
+
+                            <div class="weather-snow-top-amount-toggle metric-toggle">
+                                <span class="metric-toggle-unit metric-toggle-unit--metric ">cm</span>
+                                <span class="metric-toggle-unit metric-toggle-unit--imperial metric-toggle-unit--active">in</span>
+                            </div>
+                    </div>
+                    <span class="weather-snow-top-description head-metric-description">Last 24 Hours</span>
+                </div>
+                <ul class="weather-metrics ">
+                        <li class="weather-metrics-item">    <div class="switchable-stat">
+        <div class="switchable-stat-item switchable-stat-imperial ">
+                <span class="label">Base Conditions</span>
+        <span class="value">Machine Made</span>
+        </div>
+        <div class="switchable-stat-item switchable-stat-metric d-none">
+                <span class="label">Base Conditions</span>
+        <span class="value">Machine Made</span>
+        </div>
+    </div>
+</li>
+                </ul>
+            </div>
+    </div>
+        
+        <div class="weather-forecast">
+            <ul class="weather-forecast-list">
+                    <li class="weather-forecast-list-item">
+                        <span class="weather-forecast-list-item-day">Mon</span>
+                        <span class="weather-forecast-list-item-icon icon ico-weather-skc"></span>
+                        <span class="weather-forecast-list-item-condition">
+                            <span class="weather-forecast-list-item-condition-temp">    <div class="switchable-stat">
+        <div class="switchable-stat-item switchable-stat-imperial ">
+        <span class="value">H: 35&#176;</span>
+        </div>
+        <div class="switchable-stat-item switchable-stat-metric d-none">
+        <span class="value">H: 2&#176;</span>
+        </div>
+    </div>
+</span>
+                            <span class="weather-forecast-list-item-condition-temp">    <div class="switchable-stat">
+        <div class="switchable-stat-item switchable-stat-imperial ">
+        <span class="value">L: 24&#176;</span>
+        </div>
+        <div class="switchable-stat-item switchable-stat-metric d-none">
+        <span class="value">L: -4&#176;</span>
+        </div>
+    </div>
+</span>
+                        </span>
+                    </li>
+                    <li class="weather-forecast-list-item">
+                        <span class="weather-forecast-list-item-day">Tue</span>
+                        <span class="weather-forecast-list-item-icon icon ico-weather-skc"></span>
+                        <span class="weather-forecast-list-item-condition">
+                            <span class="weather-forecast-list-item-condition-temp">    <div class="switchable-stat">
+        <div class="switchable-stat-item switchable-stat-imperial ">
+        <span class="value">H: 36&#176;</span>
+        </div>
+        <div class="switchable-stat-item switchable-stat-metric d-none">
+        <span class="value">H: 2&#176;</span>
+        </div>
+    </div>
+</span>
+                            <span class="weather-forecast-list-item-condition-temp">    <div class="switchable-stat">
+        <div class="switchable-stat-item switchable-stat-imperial ">
+        <span class="value">L: 24&#176;</span>
+        </div>
+        <div class="switchable-stat-item switchable-stat-metric d-none">
+        <span class="value">L: -4&#176;</span>
+        </div>
+    </div>
+</span>
+                        </span>
+                    </li>
+                    <li class="weather-forecast-list-item">
+                        <span class="weather-forecast-list-item-day">Wed</span>
+                        <span class="weather-forecast-list-item-icon icon ico-weather-snow"></span>
+                        <span class="weather-forecast-list-item-condition">
+                            <span class="weather-forecast-list-item-condition-temp">    <div class="switchable-stat">
+        <div class="switchable-stat-item switchable-stat-imperial ">
+        <span class="value">H: 21&#176;</span>
+        </div>
+        <div class="switchable-stat-item switchable-stat-metric d-none">
+        <span class="value">H: -6&#176;</span>
+        </div>
+    </div>
+</span>
+                            <span class="weather-forecast-list-item-condition-temp">    <div class="switchable-stat">
+        <div class="switchable-stat-item switchable-stat-imperial ">
+        <span class="value">L: 5&#176;</span>
+        </div>
+        <div class="switchable-stat-item switchable-stat-metric d-none">
+        <span class="value">L: -15&#176;</span>
+        </div>
+    </div>
+</span>
+                        </span>
+                    </li>
+            </ul>
+                <div class="weather-forecast-snowfall">
+                    <span class="weather-forecast-snowfall-text">Expected Snowfall</span>
+                    <ul class="weather-forecast-snowfall-list">
+                            <li class="weather-forecast-snowfall-list-item">    <div class="switchable-stat">
+        <div class="switchable-stat-item switchable-stat-imperial ">
+        <span class="value">--</span>
+        </div>
+        <div class="switchable-stat-item switchable-stat-metric d-none">
+        <span class="value">--</span>
+        </div>
+    </div>
+</li>
+                            <li class="weather-forecast-snowfall-list-item">    <div class="switchable-stat">
+        <div class="switchable-stat-item switchable-stat-imperial ">
+        <span class="value">1 inches</span>
+        </div>
+        <div class="switchable-stat-item switchable-stat-metric d-none">
+        <span class="value">3 cm</span>
+        </div>
+    </div>
+</li>
+                            <li class="weather-forecast-snowfall-list-item">    <div class="switchable-stat">
+        <div class="switchable-stat-item switchable-stat-imperial ">
+        <span class="value">5 inches</span>
+        </div>
+        <div class="switchable-stat-item switchable-stat-metric d-none">
+        <span class="value">14 cm</span>
+        </div>
+    </div>
+</li>
+                    </ul>
+                </div>
+                                </div>
+    </div>
+    
+</div>
+
+
+
+<div class="conditions-trails conditions-section ">
+    <div class="conditions-section-header">
+             <h4 class="conditions-section-header-text">Trails and Lift Status</h4>
+        <span class="conditions-section-header-updated">
+            <span class="conditions-section-header-updated-date">Sun 12 Dec </span>
+            <span class="conditions-section-header-updated-time">3:47 PM MST</span>
+        </span>
+    </div>
+    <div class="conditions-trails-content">
+        <div class="conditions-trails-content-primary">
+            <p class="conditions-trails-content-primary-value">18</p>
+            <p class="conditions-trails-content-primary-name">Open Trails</p>
+        </div>
+        <ul class="conditions-trails-content-others">
+                <li class="conditions-trails-content-others-metric">
+                    <p class="conditions-trails-content-others-metric-name">Open Lifts</p>
+                    <p class="conditions-trails-content-others-metric-value">7</p>
+                </li>
+                <li class="conditions-trails-content-others-metric">
+                    <p class="conditions-trails-content-others-metric-name">Open Trails</p>
+                    <p class="conditions-trails-content-others-metric-value">18</p>
+                </li>
+                <li class="conditions-trails-content-others-metric">
+                    <p class="conditions-trails-content-others-metric-name">Open Activities</p>
+                    <p class="conditions-trails-content-others-metric-value">2</p>
+                </li>
+        </ul>
+        
+            <a class="conditions-trails-content-cta conditions-section-cta linkbtndark" href="/the-mountain/mountain-report" target="_parent">View Mountain Report</a>
+    </div>
+    
+</div><div class="conditions-cams conditions-section">
+    <div class="conditions-section-header">
+            <h4 class="conditions-section-header-text">Webcams</h4>
+        <span class="conditions-section-header-updated">
+            <span class="conditions-section-header-updated-date">Sun 12 Dec </span>
+            <span class="conditions-section-header-updated-time">3:47 PM MST</span>
+        </span>
+    </div>
+    <div class="conditions-cams-content">
+        <ul class="conditions-cams-list">
+                <li class="conditions-cam">
+                    <a class="conditions-cam-link" href="/the-mountain/mountain-cams" target="_parent">
+                        <img data-object-fit="cover" alt="view of conditions at Base Cam" class="conditions-cam-image" src="http://cams.winterparkresort.com/winter-park-basecam.jpg"/>
+                        <p class="conditions-cam-name">Base Cam</p>
+                    </a>
+                </li>
+                <li class="conditions-cam">
+                    <a class="conditions-cam-link" href="" target="_parent">
+                        <img data-object-fit="cover" alt="view of conditions at Snoasis Cam" class="conditions-cam-image" src="http://cams.winterparkresort.com/snoasis-cam.jpg"/>
+                        <p class="conditions-cam-name">Snoasis Cam</p>
+                    </a>
+                </li>
+                <li class="conditions-cam">
+                    <a class="conditions-cam-link" href="/the-mountain/mountain-cams" target="_parent">
+                        <img data-object-fit="cover" alt="view of conditions at Lunch Rock Cam" class="conditions-cam-image" src="https://cams.mtnfeed.com/compressed/lrock-cam_300x169.jpg"/>
+                        <p class="conditions-cam-name">Lunch Rock Cam</p>
+                    </a>
+                </li>
+        </ul>
+            <a class="conditions-cams-content-cta conditions-section-cta linkbtndark" href="/the-mountain/mountain-cams" target="">View All Webcams</a>
+    </div>
+</div>                    </div>
+                </div>
+            </div>
+        </div>
+        <var aria-hidden="true" class="js_components hidden">
+        condition-snippet
+    </var>
+</div>
+
+        
+<div class="alerts"
+     data-alerts-read-open-by-default="True"
+     data-alerts-read-cookie-name="alertsNeedToRead" 
+     data-alerts-read-cookie-high="-233957271" 
+     data-alerts-read-cookie-others="0">
+    <div class="alerts-toggle">
+        <button class="alerts-toggle-icon">
+            <span class="alerts-toggle-icon-bell"></span>
+                <span class="alerts-toggle-icon-number">1</span>
+        </button>
+    </div>
+    <div class="alerts-container">
+        <div class="alerts-container-scroller">
+            <div class="alerts-container-scroller-inner">
+    <div class="alert  alert-high">
+            <a class="alert-content" href="/plan-your-trip/deals-and-packages/free-4-all" target="_parent">
+                    <span class="alert-content-bar"></span>
+    <p class="alert-content-headline">
+            <span class="alert-content-headline-important"></span>
+        Last Chance to Get Your 4th Night lodging &amp; 4th Day Lift Access FREE
+    </p>
+    <p class="alert-content-body">Book now</p>
+        <span class="alert-content-arrow"></span>
+
+            </a>
+    </div>
+                <div class="alerts-container-other-alerts">
+                                    </div>
+            </div>
+        </div>
+    </div>
+
+    <var aria-hidden="true" class="js_components hidden">
+        alerts
+    </var>
+</div>
+
+
+
+
+
+        <div class="search-bar-v2">
+    <div class="container">
+            <form action="/search" method="GET" target="_parent">
+                <div class="input-wrapper">
+                    <input name="query" type="text" title="Type to search" placeholder="Type to search" autocomplete="off"/>
+                    <button class="icon submit visually-hidden ico-magnify">Search</button>
+                </div>
+            </form>
+        
+
+        <div class="predictive-search-results-wrapper">
+            <ul class="predictive-search-results"></ul>
+            <div class="predictive-search-see-more">
+                <a href="/search">See More Results ❯</a>
+            </div>
+        </div>
+        <button class="close">Close</button>
+    </div>
+    
+    <var aria-hidden="true" class="hidden search-bar-v2-config">
+        {"isEnabledMatchedPhraseHighlight":true}
+    </var>
+</div>
+
+<a class="search" href="javascript:void(0);">
+    <div class="search-button">
+        <span class="search-icon" role="img" aria-label="Search"></span>
+    </div>
+</a>
+
+<var aria-hidden="true" class="js_components hidden">
+    search-bar-v2
+</var>
+
+
+        <div class="mini-cart">
+
+            <div class="mini-cart-toggle">
+                <button class="mini-cart-toggle-icon">
+                    <span class="fal fa-shopping-cart"></span>
+                    <span class="mini-cart-toggle-icon-number"></span>
+                </button>
+            </div>
+            <div class="mini-cart-container d-invisible">
+                <div class="mini-cart-container-scroller"></div>
+            </div>
+
+    <var aria-hidden="true" class="js_components hidden">
+        mini-cart
+    </var>
+    <var aria-hidden="true" class="results hidden">{&quot;adultLabel&quot;:null,&quot;bookingFeeItems&quot;:[],&quot;bookingFeeLabel&quot;:null,&quot;bookingFeeTotal&quot;:0.0,&quot;bookingFeeTotalDisplay&quot;:null,&quot;cartItems&quot;:[],&quot;groupedCartItems&quot;:[],&quot;miniCartCheckoutButtonText&quot;:null,&quot;cartPageCheckoutButtonText&quot;:null,&quot;miniCartCheckoutLink&quot;:{&quot;text&quot;:&quot;&quot;,&quot;url&quot;:&quot;/cart&quot;,&quot;target&quot;:&quot;_parent&quot;,&quot;styleClass&quot;:&quot;&quot;,&quot;isSet&quot;:true},&quot;cartPageCheckoutLink&quot;:{&quot;text&quot;:null,&quot;url&quot;:null,&quot;target&quot;:null,&quot;styleClass&quot;:null,&quot;isSet&quot;:false},&quot;checkoutMethod&quot;:null,&quot;childLabel&quot;:null,&quot;childLabelPlural&quot;:null,&quot;count&quot;:0,&quot;currency&quot;:null,&quot;dueNowLabel&quot;:null,&quot;dueNow&quot;:0.0,&quot;dueNowDisplay&quot;:null,&quot;emptyCartLabel&quot;:null,&quot;emptyCartDetails&quot;:null,&quot;errorLabel&quot;:null,&quot;errorLabelDetails&quot;:null,&quot;estimatedTotalLabel&quot;:null,&quot;feesAndTaxes&quot;:[],&quot;grandTotal&quot;:0.0,&quot;grandTotalDisplay&quot;:null,&quot;hasDueNow&quot;:false,&quot;hasError&quot;:false,&quot;hasItems&quot;:false,&quot;isSuccess&quot;:false,&quot;itemLabel&quot;:null,&quot;itemLabelFormatted&quot;:null,&quot;itineraryId&quot;:0,&quot;itineraryIdLabel&quot;:null,&quot;localDictionaryDomain&quot;:null,&quot;orderSummaryLabel&quot;:null,&quot;packageLabel&quot;:null,&quot;sessionId&quot;:null,&quot;showMiniCart&quot;:true,&quot;redirectToCart&quot;:false,&quot;showUpsells&quot;:false,&quot;startingLabel&quot;:null,&quot;subTotalLabel&quot;:null,&quot;subTotalPrice&quot;:0.0,&quot;subTotalPriceDisplay&quot;:null,&quot;taxesAndFeesLabel&quot;:null,&quot;taxesAndFees&quot;:0.0,&quot;taxesAndFeesDisplay&quot;:null,&quot;tryAgainLabel&quot;:null,&quot;crossSellsTitle&quot;:null,&quot;crossSells&quot;:[],&quot;hasCrossSells&quot;:false,&quot;hasMultipleLodging&quot;:false,&quot;hasLiftTickets&quot;:false,&quot;upsellsModel&quot;:{&quot;activityStartDate&quot;:null,&quot;activityStartDateFormatted&quot;:null,&quot;addToCartText&quot;:null,&quot;adultLabel&quot;:null,&quot;guests&quot;:[],&quot;ageDetails&quot;:null,&quot;agesFormatted&quot;:null,&quot;childLabel&quot;:null,&quot;childLabelPlural&quot;:null,&quot;customizeNow&quot;:null,&quot;customizeNowDescr&quot;:null,&quot;customizeLink&quot;:null,&quot;customizeLinkUrl&quot;:null,&quot;customizeLinkTarget&quot;:null,&quot;datepickerButtonText&quot;:null,&quot;details&quot;:null,&quot;detailsNotAvailable&quot;:null,&quot;errorMessage&quot;:null,&quot;hasActivityStartDateBeenSelected&quot;:false,&quot;hasAgeCategoriesBeenSelected&quot;:false,&quot;hasNumberOfDaysBeenSelected&quot;:false,&quot;hasOptionalMessage&quot;:false,&quot;hasTicketsAvailable&quot;:false,&quot;hasUserSelections&quot;:false,&quot;maxDays&quot;:0,&quot;numberOfDays&quot;:null,&quot;numberOfDaysButtonText&quot;:null,&quot;numberOfDaysDescription&quot;:null,&quot;numberOfDaysDetail&quot;:null,&quot;numberOfDaysDisclaimer&quot;:null,&quot;numberOfDaysSelected&quot;:0,&quot;numberOfDaysSelectedFormatted&quot;:null,&quot;notAvailableMessage&quot;:null,&quot;notAvailableText&quot;:null,&quot;numberOfDaysOptions&quot;:[],&quot;optionalMessage&quot;:null,&quot;people&quot;:null,&quot;peoplepickerButtonText&quot;:null,&quot;price&quot;:0.0,&quot;priceDisplay&quot;:null,&quot;pricePerDayPerPerson&quot;:0.0,&quot;pricePerDayPerPersonDisplay&quot;:null,&quot;productCategoryId&quot;:0,&quot;resortAgeCategories&quot;:[],&quot;startDate&quot;:null,&quot;startDateTitle&quot;:null,&quot;selectDate&quot;:null,&quot;selectDays&quot;:null,&quot;selectPeople&quot;:null,&quot;supplierId&quot;:0,&quot;title&quot;:null,&quot;upsellProducts&quot;:[],&quot;useLodgingDates&quot;:false},&quot;cartJSON&quot;:null}</var>
+</div>
+
+
+    </div>
+</header>
+    <div class="site-wrapper ">
+        
+        
+        <main id="main-content" tabindex="-1">
+            <div class="page-header-container contain">
+                
+            </div>
+            
+
+<div class="main-content">
+         <div class="raw-html">
+      <link href="https://www.mtnfeed.com/stylesheets/site.css" rel="stylesheet" />
+  <body id="winter-park">
+    <div class="winter-park-mtn-dashboard">
+      <div id="mountainConditionsApp"></div>
+
+    </div>
+  </body>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.min.js"></script>
+
+  <script src="https://unpkg.com/vuex@3.0.0/dist/vuex.js"></script>
+
+    <script src="https://www.mtnfeed.com/javascripts/site.js"></script>
+  <script>
+    // Load the IFrame Player API code asynchronously.
+    var tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/player_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+  </script>
+
+    </div>
+  <var aria-hidden="true" class="js_components hidden">
+        
+  </var>
+
+
+</div>
+
+        </main>
+    </div>
+    <var aria-hidden="true" class="date-picker-config hidden">
+        {&quot;centeredHeader&quot;:false,&quot;twoCharacterWeekDay&quot;:false}
+    </var>
+    <var aria-hidden="true" class="js_components hidden">
+        button-links
+    </var>
+    
+    
+
+<!-- New Footer -->
+<footer aria-label="Site Footer">
+        <div class="footer-email-signup-wrapper-v2">
+                <div class="email-signup-v2 footer footer-email-signup">
+        <div class="container">
+    <div class="email-signup-content" role="complementary" aria-label="Email Signup">
+        <div class="email-signup-text-container">
+                <div class="heading">Keep up with the latest from Winter Park Resort</div>
+        </div>
+
+        <div class="button-wrap--center">
+            <a class="default-button email-signup-button squaw-email-signup-button" href="/email/email-signup" target="_blank">
+                <span class="background"></span>
+                <span class="text">Sign Up</span>
+            </a>
+        </div>
+
+        <div class="email-signup-button default-signup-email-button">
+            <div class="button-wrap--center">
+                <a class="signup-button default submit" href="/email/email-signup" target="_blank">
+                    <span class="text">Sign Up</span>
+                </a>
+            </div>
+        </div>
+
+    </div>
+</div>
+        <var aria-hidden="true" class="js_components hidden">
+            footer-positioning, footer-email-signup
+        </var>
+    </div>
+
+        </div>
+    <div class="background">
+        <div class="footer-links">
+            <div class="basic-links">
+                
+
+    <div class="footer-link-section">
+        <div>
+            <div class="mobile-only">
+                        <nav class="accordion" aria-label="Mobile About Us">
+            <span class="mobile-header accordion-title">About Us</span>
+            <div class="accordion-items">
+<a href="/about-us">About Winter Park</a><a href="/the-mountain/community" target="_parent">Community</a><a href="/about-us/sponsors">Resort Partners</a><a href="/real-estate">Real Estate</a><a href="/wprl-rental-program">Homeowner Relations</a><a href="/about-us/contact-us">Contact Us</a><a href="http://nscd.org/" rel="noopener noreferrer" target="_blank">NSCD</a>            </div>
+        </nav>
+
+                        <nav class="accordion" aria-label="Mobile Employment">
+            <span class="mobile-header accordion-title">Employment</span>
+            <div class="accordion-items">
+<a href="/employment">Winter Park Employment</a><a href="https://recruiting2.ultipro.com/INT1052IWEST/JobBoard/0ee78872-838d-584f-2478-f7450cb10a72/?t=physicallocation&amp;v=1d1379ac-273d-5974-8dd8-5065fddac1df&amp;q=&amp;o=postedDateDesc&amp;f4=RjlViiP40lqRq7dMG-m9KQ" rel="noopener noreferrer" target="_blank">Jobs &amp; Applications</a><a href="/employment/employee-housing">Employee Housing</a><a href="/employment/employee-perks">Employee Perks</a><a href="/employment/international">International</a><a href="/employment/volunteering">Volunteering</a><a href="/employment/stoked-wp">#StokedWP</a>            </div>
+        </nav>
+
+                        <nav class="accordion" aria-label="Mobile Media Center">
+            <span class="mobile-header accordion-title">Media Center</span>
+            <div class="accordion-items">
+<a href="/media-center">Contact Media Center</a><a href="/media-center/press-releases">Press Releases</a>            </div>
+        </nav>
+
+                
+                
+                
+            </div>
+            <div class="non-mobile-block d-xl-none">
+                <div class="footer-link-columns">
+                        <div class="footer-link-column">
+            <nav aria-label="Tablet About Us">
+                    <div class="heading">About Us</div>
+                <div>
+                        <div class="link-container">
+                            <a href="/about-us">About Winter Park</a>
+                        </div>
+                        <div class="link-container">
+                            <a href="/the-mountain/community" target="_parent">Community</a>
+                        </div>
+                        <div class="link-container">
+                            <a href="/about-us/sponsors">Resort Partners</a>
+                        </div>
+                        <div class="link-container">
+                            <a href="/real-estate">Real Estate</a>
+                        </div>
+                        <div class="link-container">
+                            <a href="/wprl-rental-program">Homeowner Relations</a>
+                        </div>
+                        <div class="link-container">
+                            <a href="/about-us/contact-us">Contact Us</a>
+                        </div>
+                        <div class="link-container">
+                            <a href="http://nscd.org/" rel="noopener noreferrer" target="_blank">NSCD</a>
+                        </div>
+                </div>
+            </nav>
+            </div>
+
+                        <div class="footer-link-column">
+            <nav aria-label="Tablet Employment">
+                    <div class="heading">Employment</div>
+                <div>
+                        <div class="link-container">
+                            <a href="/employment">Winter Park Employment</a>
+                        </div>
+                        <div class="link-container">
+                            <a href="https://recruiting2.ultipro.com/INT1052IWEST/JobBoard/0ee78872-838d-584f-2478-f7450cb10a72/?t=physicallocation&amp;v=1d1379ac-273d-5974-8dd8-5065fddac1df&amp;q=&amp;o=postedDateDesc&amp;f4=RjlViiP40lqRq7dMG-m9KQ" rel="noopener noreferrer" target="_blank">Jobs &amp; Applications</a>
+                        </div>
+                        <div class="link-container">
+                            <a href="/employment/employee-housing">Employee Housing</a>
+                        </div>
+                        <div class="link-container">
+                            <a href="/employment/employee-perks">Employee Perks</a>
+                        </div>
+                        <div class="link-container">
+                            <a href="/employment/international">International</a>
+                        </div>
+                        <div class="link-container">
+                            <a href="/employment/volunteering">Volunteering</a>
+                        </div>
+                        <div class="link-container">
+                            <a href="/employment/stoked-wp">#StokedWP</a>
+                        </div>
+                </div>
+            </nav>
+            </div>
+
+                        <div class="footer-link-column">
+            <nav aria-label="Tablet Media Center">
+                    <div class="heading">Media Center</div>
+                <div>
+                        <div class="link-container">
+                            <a href="/media-center">Contact Media Center</a>
+                        </div>
+                        <div class="link-container">
+                            <a href="/media-center/press-releases">Press Releases</a>
+                        </div>
+                </div>
+            </nav>
+            </div>
+
+                </div>
+            </div>
+            <div class="d-none d-xl-block">
+                <div class="footer-link-columns">
+                            <nav class="footer-link-column " aria-label="Desktop About Us">
+                <div class="heading">About Us</div>
+            <div>
+                    <div class="link-container">
+                        <a href="/about-us">About Winter Park</a>
+                    </div>
+                    <div class="link-container">
+                        <a href="/the-mountain/community" target="_parent">Community</a>
+                    </div>
+                    <div class="link-container">
+                        <a href="/about-us/sponsors">Resort Partners</a>
+                    </div>
+                    <div class="link-container">
+                        <a href="/real-estate">Real Estate</a>
+                    </div>
+                    <div class="link-container">
+                        <a href="/wprl-rental-program">Homeowner Relations</a>
+                    </div>
+                    <div class="link-container">
+                        <a href="/about-us/contact-us">Contact Us</a>
+                    </div>
+                    <div class="link-container">
+                        <a href="http://nscd.org/" rel="noopener noreferrer" target="_blank">NSCD</a>
+                    </div>
+            </div>
+        </nav>
+
+                            <nav class="footer-link-column " aria-label="Desktop Employment">
+                <div class="heading">Employment</div>
+            <div>
+                    <div class="link-container">
+                        <a href="/employment">Winter Park Employment</a>
+                    </div>
+                    <div class="link-container">
+                        <a href="https://recruiting2.ultipro.com/INT1052IWEST/JobBoard/0ee78872-838d-584f-2478-f7450cb10a72/?t=physicallocation&amp;v=1d1379ac-273d-5974-8dd8-5065fddac1df&amp;q=&amp;o=postedDateDesc&amp;f4=RjlViiP40lqRq7dMG-m9KQ" rel="noopener noreferrer" target="_blank">Jobs &amp; Applications</a>
+                    </div>
+                    <div class="link-container">
+                        <a href="/employment/employee-housing">Employee Housing</a>
+                    </div>
+                    <div class="link-container">
+                        <a href="/employment/employee-perks">Employee Perks</a>
+                    </div>
+                    <div class="link-container">
+                        <a href="/employment/international">International</a>
+                    </div>
+                    <div class="link-container">
+                        <a href="/employment/volunteering">Volunteering</a>
+                    </div>
+                    <div class="link-container">
+                        <a href="/employment/stoked-wp">#StokedWP</a>
+                    </div>
+            </div>
+        </nav>
+
+                            <nav class="footer-link-column " aria-label="Desktop Media Center">
+                <div class="heading">Media Center</div>
+            <div>
+                    <div class="link-container">
+                        <a href="/media-center">Contact Media Center</a>
+                    </div>
+                    <div class="link-container">
+                        <a href="/media-center/press-releases">Press Releases</a>
+                    </div>
+            </div>
+        </nav>
+
+                            <div class="footer-link-column "></div>
+
+                            <div class="footer-link-column "></div>
+
+                </div>
+            </div>
+            <div class="d-none d-md-block non-mobile-block">
+                <div class="footer-link-columns">
+    <nav class="footer-link-column " aria-label="Desktop social">
+        <div>
+            <div class="social desktop">
+                        <div class="heading social-heading">Social</div>
+    <div class="social-icons">
+            <a href="/email/email-signup" title="Email WP" target="">
+                <div class="social-link icon ico-email"></div>
+            </a>
+            <a href="https://www.facebook.com/WinterParkResortCO" title="Facebook WP" target="_blank">
+                <div class="social-link icon ico-facebook"></div>
+            </a>
+            <a href="https://twitter.com/winterpark" title="Twitter WP" target="_blank">
+                <div class="social-link icon ico-twitter"></div>
+            </a>
+            <a href="https://www.instagram.com/winterparkresort/" title="Insta WP" target="">
+                <div class="social-link icon fa fa-instagram"></div>
+            </a>
+        <span class="stretch"></span>
+    </div>
+
+            </div>
+        </div>
+    </nav>
+                            <div class="footer-link-column "></div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <var aria-hidden="true" class="js_components hidden">
+        accordion, footer-link-section
+    </var>
+
+
+
+
+
+
+            </div>
+                    <div class="footer-sponsors">
+
+                <div class="heading">Native Lands</div>
+            <div class="footer-sponsors-icons">
+                            </div>
+            <div class="sponsors-rich-text"><span class="paragraph-three">Winter Park Resort acknowledges and honors that the land on which we operate today is the traditional and ancestral homelands of the Nookhose'iinenno (Northern Arapaho), Tsis tsis'tas (Cheyenne), and Nuuchu (Ute).<br /><br /><a href="/the-mountain/land-acknowledgement"><strong>Learn More</strong></a></span></div>
+
+        </div>
+
+        </div>
+        <div class="site-identity-bar">
+            <div class="resort-banner-wrapper">
+                
+<div class="resort-banner">
+        
+
+<div class="resort-banner-container">
+<div class="resorts">
+    <div class="img-carousel">
+        <div class="desktop dragscroll">
+            <ul>
+                    <li>
+                        <a href="https://www.bigbearmountainresort.com/" target="_blank" title="Big Bear Mountain Resort">
+                            <img src="/-/media/alterra-mountain-logos/new-footer-logos-2018/big-bear.ashx?h=50&amp;w=65&amp;hash=98FF3F1E11013C93168BCDD4FEA3E62A" alt="Big Bear Mountain Resort" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://www.bluemountain.ca/" target="_blank" title="Blue Mountain">
+                            <img src="/-/media/alterra-mountain-logos/new-footer-logos-2018/blue-mountain.ashx?h=50&amp;w=71&amp;hash=0DA273BB0F967245BE372E68645BBBC1" alt="Blue Mountain" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://www.cmhheli.com" target="_blank" title="CMH">
+                            <img src="/-/media/alterra-mountain-logos/new-footer-logos-2018/cmh.ashx?h=50&amp;w=88&amp;hash=773E6924900B0C881945315002730A75" alt="CMH" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.crystalmountainresort.com" target="_blank" title="Crystal">
+                            <img src="/-/media/alterra-mountain-logos/new-footer-logos-2018/crystal-new.ashx?h=45&amp;w=50&amp;hash=0E4FEF2B2C5950FA5D6009F3FCCAC2BF" alt="Crystal" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://www.deervalley.com" target="_blank" title="Deer Valley">
+                            <img src="/-/media/alterra-mountain-logos/new-footer-logos-2018/deer-valley.ashx?h=50&amp;w=46&amp;hash=996733F4BF080594F39186F263EE0D5A" alt="Deer Valley" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.junemountain.com" target="_blank" title="June">
+                            <img src="/-/media/alterra-mountain-logos/new-footer-logos-2018/june.ashx?h=50&amp;w=77&amp;hash=7402EE56D2F9C7BCD84357BD976982C0" alt="June" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.mammothmountain.com/" target="_blank" title="Mammoth">
+                            <img src="/-/media/alterra-mountain-logos/new-footer-logos-2018/mammoth.ashx?h=50&amp;w=61&amp;hash=C78CDC9F5B5390564998A10419182B31" alt="Mammoth" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://www.snowshoemtn.com/" target="_blank" title="Snowshoe">
+                            <img src="/-/media/alterra-mountain-logos/new-footer-logos-2018/snowshoe.ashx?h=50&amp;w=54&amp;hash=7DC62E44237D994DFBB49A06BC6202BB" alt="Snowshoe" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://solitudemountain.com" target="_blank" title="Solitude">
+                            <img src="/-/media/alterra-mountain-logos/new-footer-logos-2018/solitude-new.ashx?h=50&amp;w=70&amp;hash=3279B605187A26E6D876924C376C6024" alt="Solitude" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://palisadestahoe.com" target="_blank" title="Palisades Tahoe">
+                            <img src="/-/media/alterra-mountain-logos/new-footer-logos-2018/squaw-alpine/shaka_lockups_rgb_primary_horizontal_white-100x50.ashx?h=50&amp;w=100&amp;hash=DABE2DD300E6F9C0F6C21E7FB50D95B0" alt="Palisades Tahoe" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://www.steamboat.com" target="_blank" title="Steamboat">
+                            <img src="/-/media/alterra-mountain-logos/new-footer-logos-2018/steamboat.ashx?h=50&amp;w=84&amp;hash=60D8DC66C024B27BB435CE30F0C8600F" alt="Steamboat" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://www.stratton.com" target="_blank" title="Stratton">
+                            <img src="/-/media/alterra-mountain-logos/new-footer-logos-2018/stratton.ashx?h=50&amp;w=54&amp;hash=D5AB7ECE17209EEB39BCD621789F3996" alt="Stratton" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://sugarbush.com/" target="_blank" title="Sugarbush">
+                            <img src="/-/media/alterra-mountain-logos/new-footer-logos-2018/sugarbush-2.ashx?h=40&amp;w=84&amp;hash=1650A85E8E92D6439F3377F5EA2A293F" alt="Sugarbush" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://www.tremblant.ca" target="_blank" title="Tremblant">
+                            <img src="/-/media/alterra-mountain-logos/new-footer-logos-2018/tremblant.ashx?h=50&amp;w=61&amp;hash=C5026E43489327618C73F184A813849F" alt="Tremblant" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://www.alpineaerotech.com" target="_blank" title="Alpine Aerotech">
+                            <img src="/-/media/alterra-mountain-logos/new-footer-logos-2018/alpine-aerotech.ashx?h=50&amp;w=71&amp;hash=B7FF399BBC6AD45188D537C5D0F11A45" alt="Alpine Aerotech" />
+                        </a>
+                    </li>
+            </ul>
+        </div>
+        <div class="mobile dragscroll">
+            <ul>
+                    <li>
+                        <a href="https://www.bigbearmountainresort.com/" target="_blank" title="Big Bear Mountain Resort">
+                            <img src="/-/media/alterra-mountain-logos/new-footer-logos-2018/big-bear.ashx?h=50&amp;w=65&amp;hash=98FF3F1E11013C93168BCDD4FEA3E62A" alt="Big Bear Mountain Resort" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://www.bluemountain.ca/" target="_blank" title="Blue Mountain">
+                            <img src="/-/media/alterra-mountain-logos/new-footer-logos-2018/blue-mountain.ashx?h=50&amp;w=71&amp;hash=0DA273BB0F967245BE372E68645BBBC1" alt="Blue Mountain" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://www.cmhheli.com" target="_blank" title="CMH">
+                            <img src="/-/media/alterra-mountain-logos/new-footer-logos-2018/cmh.ashx?h=50&amp;w=88&amp;hash=773E6924900B0C881945315002730A75" alt="CMH" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.crystalmountainresort.com" target="_blank" title="Crystal">
+                            <img src="/-/media/alterra-mountain-logos/new-footer-logos-2018/crystal-new.ashx?h=45&amp;w=50&amp;hash=0E4FEF2B2C5950FA5D6009F3FCCAC2BF" alt="Crystal" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://www.deervalley.com" target="_blank" title="Deer Valley">
+                            <img src="/-/media/alterra-mountain-logos/new-footer-logos-2018/deer-valley.ashx?h=50&amp;w=46&amp;hash=996733F4BF080594F39186F263EE0D5A" alt="Deer Valley" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.junemountain.com" target="_blank" title="June">
+                            <img src="/-/media/alterra-mountain-logos/new-footer-logos-2018/june.ashx?h=50&amp;w=77&amp;hash=7402EE56D2F9C7BCD84357BD976982C0" alt="June" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.mammothmountain.com/" target="_blank" title="Mammoth">
+                            <img src="/-/media/alterra-mountain-logos/new-footer-logos-2018/mammoth.ashx?h=50&amp;w=61&amp;hash=C78CDC9F5B5390564998A10419182B31" alt="Mammoth" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://www.snowshoemtn.com/" target="_blank" title="Snowshoe">
+                            <img src="/-/media/alterra-mountain-logos/new-footer-logos-2018/snowshoe.ashx?h=50&amp;w=54&amp;hash=7DC62E44237D994DFBB49A06BC6202BB" alt="Snowshoe" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://solitudemountain.com" target="_blank" title="Solitude">
+                            <img src="/-/media/alterra-mountain-logos/new-footer-logos-2018/solitude-new.ashx?h=50&amp;w=70&amp;hash=3279B605187A26E6D876924C376C6024" alt="Solitude" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://palisadestahoe.com" target="_blank" title="Palisades Tahoe">
+                            <img src="/-/media/alterra-mountain-logos/new-footer-logos-2018/squaw-alpine/shaka_lockups_rgb_primary_horizontal_white-100x50.ashx?h=50&amp;w=100&amp;hash=DABE2DD300E6F9C0F6C21E7FB50D95B0" alt="Palisades Tahoe" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://www.steamboat.com" target="_blank" title="Steamboat">
+                            <img src="/-/media/alterra-mountain-logos/new-footer-logos-2018/steamboat.ashx?h=50&amp;w=84&amp;hash=60D8DC66C024B27BB435CE30F0C8600F" alt="Steamboat" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://www.stratton.com" target="_blank" title="Stratton">
+                            <img src="/-/media/alterra-mountain-logos/new-footer-logos-2018/stratton.ashx?h=50&amp;w=54&amp;hash=D5AB7ECE17209EEB39BCD621789F3996" alt="Stratton" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://sugarbush.com/" target="_blank" title="Sugarbush">
+                            <img src="/-/media/alterra-mountain-logos/new-footer-logos-2018/sugarbush-2.ashx?h=40&amp;w=84&amp;hash=1650A85E8E92D6439F3377F5EA2A293F" alt="Sugarbush" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://www.tremblant.ca" target="_blank" title="Tremblant">
+                            <img src="/-/media/alterra-mountain-logos/new-footer-logos-2018/tremblant.ashx?h=50&amp;w=61&amp;hash=C5026E43489327618C73F184A813849F" alt="Tremblant" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://www.alpineaerotech.com" target="_blank" title="Alpine Aerotech">
+                            <img src="/-/media/alterra-mountain-logos/new-footer-logos-2018/alpine-aerotech.ashx?h=50&amp;w=71&amp;hash=B7FF399BBC6AD45188D537C5D0F11A45" alt="Alpine Aerotech" />
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="current-resort-wrapper">
+    <div class="current-resort-content">
+        <div class="resort-accordion-button" tabindex="0">
+                <img src="/-/media/alterra-mountain-logos/new-footer-logos-2018/winter-park.ashx?h=50&amp;w=71&amp;hash=5E7734648976BE810B19D1833919199D" alt="Winter Park" />
+            <div class="arrow-icon "></div>
+        </div>
+        <div class="address">
+            <a class="address-link" href="https://www.google.com/maps/place/85 Parsenn Road Winter Park, Colorado 80482" target="_blank">
+                <div class="address-and-map-pin">
+                    <div class="map-pin-icon"></div>
+                    <div class="address-text">
+                        <span>
+                            <p>85 Parsenn Road</p>
+                            <p>Winter Park, Colorado 80482</p>
+                            <p></p>
+                            <p>
+                                <div class="copyright mobile">
+                                    &copy;2021
+                                    Winter Park Resort
+                                </div>
+                            </p>
+                        </span>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="copyright desktop">
+            <span>
+                &copy;2021
+                Winter Park Resort
+            </span>
+        </div>
+    </div>
+</div>
+    <var aria-hidden="true" class="js_components hidden">
+        resort-banner, img-carousel
+    </var>
+</div>
+
+
+
+
+</div>
+            </div>
+            <div class="social mobile">
+                        <div class="heading social-heading">Social</div>
+    <div class="social-icons">
+            <a href="/email/email-signup" title="Email WP" target="">
+                <div class="social-link icon ico-email"></div>
+            </a>
+            <a href="https://www.facebook.com/WinterParkResortCO" title="Facebook WP" target="_blank">
+                <div class="social-link icon ico-facebook"></div>
+            </a>
+            <a href="https://twitter.com/winterpark" title="Twitter WP" target="_blank">
+                <div class="social-link icon ico-twitter"></div>
+            </a>
+            <a href="https://www.instagram.com/winterparkresort/" title="Insta WP" target="">
+                <div class="social-link icon fa fa-instagram"></div>
+            </a>
+        <span class="stretch"></span>
+    </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="alterra-banner-background">
+            <div class="alterra-banner">
+        <ul class="alterra-link">
+            <li>
+                <a href="https://www.alterramtnco.com/" rel="noopener noreferrer" target="_blank">Alterra Mountain Company</a>
+            </li>
+        </ul>
+
+        <ul>
+            <li>
+                <a href="https://www.alterramtnco.com/privacy-policy/" rel="noopener noreferrer" target="_blank">Privacy Policy</a>
+            </li>
+            <li>
+                <a href="https://www.alterramtnco.com/terms-of-use/" rel="noopener noreferrer" target="_blank">Terms of Service</a>
+            </li>
+            <li>
+                <a href="https://www.alterramtnco.com/photo-upload-terms-of-use/" rel="noopener noreferrer" target="_blank">Photo Upload Terms of Use</a>
+            </li>
+            <li>
+                <a href="https://www.alterramtnco.com/accessibility/" rel="noopener noreferrer" target="_blank">Accessibility</a>
+            </li>
+            <li>
+                <span class='ot-sdk-show-settings'>Cookie Settings</span>
+            </li>
+        </ul>
+    </div>
+
+    </div>
+</footer>
+<var aria-hidden="true" class="hidden" id="sitecore_build_number">2574.2366</var>
+
+<var aria-hidden="true" class="hidden" id="is_minified">True</var>
+<script>
+    window.tlnBuildVersion = document.getElementById('sitecore_build_number').innerHTML.trim();
+    window.isMinified = document.getElementById('is_minified').innerHTML.trim() === "True";
+    window.jsPath = (function () {
+        var productionPath = '/public/Shared/production/javascripts/',
+            localPath = '/public/Shared/javascripts/';
+
+        return window.isMinified ? productionPath : localPath;
+    })();
+    window.require = {
+        paths: {
+            app: window.jsPath + 'app.js?v=' + tlnBuildVersion
+        }
+    };
+</script>
+<script async data-main="app" src="/public/Shared/javascripts/lib/require.2.3.6.min.js"></script>
+
+
+    
+    <script>
+        window.placeholderConfig = { 'url': '/public/Shared/images/placeholder.png' };
+    </script>
+<script async type="text/javascript" src="/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=3&cb=1889578905"></script>
+</body>
+</html>
