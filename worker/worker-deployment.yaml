@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: worker
-        image: karenlstengel/powtrackers-worker:latest
+        image: gcr.io/powtrackers/powtrackers-worker:latest
         # imagePullPolicy: Never
         resources:
           requests:
