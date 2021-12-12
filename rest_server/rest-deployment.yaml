@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: rest-server
-        image: gcr.io/powtrackers/powtrackers-rest:latest 
+        image: karenlstengel/powtrackers-rest:latest 
         env:
         - name: REDIS_HOST
           value: redis
