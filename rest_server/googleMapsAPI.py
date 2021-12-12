@@ -54,8 +54,8 @@ def getTravelInfo(coordinates_start, coordinates_end, API_KEY = ''):
         duration = response["rows"][0]["elements"][k]["duration"]["text"].split(' ')
     
         if len(duration) == 2: # case when we have less that 1 hour of travel time
-            resortTrafficInfo[key]['time'] = {'hours': 0, duration[1]: int(duration[0])}
+            resortTrafficInfo[key]["time"] = {"hours": 0, duration[1]: int(duration[0])}
         else:
-            resortTrafficInfo[key]['time'] = {'hours': int(duration[0]), duration[3]: int(duration[2])}
+            resortTrafficInfo[key]["time"] = {"hours": int(duration[0]), duration[3]: int(duration[2])}
     
     return resortTrafficInfo

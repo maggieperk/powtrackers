@@ -4,7 +4,7 @@ import requests
 import json
 import os
 import sys
-
+import time
 
 #
 # Use localhost & port 5000 if not specified by environment variable REST
@@ -42,9 +42,10 @@ mkReq(requests.get, "apiv1/initResortDB",
       data = {'Eldora': '39.938086,-105.584282',
               'Steamboat': '40.455464,-106.808369',
               'Copper': '39.498871,-106.139443',
-               'Winter Park': '39.886346,-105.761533',
-               'ECCR': '40.007719,-105.261416'
+              'Winter Park': '39.886346,-105.761533',
+              'ECCR': '40.007719,-105.261416'
             })
+time.sleep(100) # should fix this. should wait for response from rabbitMQ?
 
 mkReq(requests.get, "apiv1/traffic",
       data={

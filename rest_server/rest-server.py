@@ -94,6 +94,20 @@ def initConditionsDB():
     response = jsonpickle.encode({'response': 'Conditions DB initialized.'})
     return Response(response=response, status=200, mimetype='application/json')
 
+def rank_traffic():
+    int_times = {}
+
+    for key in db_traffic.keys():
+        val = json.loads(db_traffic[key].replace("'", '"'))
+        time = int(val['time']['hours'])*60 + int(val['time']['mins'])
+        int_times[key] = time
+    
+    # sorted_times = {k: v for k, v in sorted(int_times.items(), reverse = True,key=lambda item: item[1])}
+    
+    # ranked = {k: i for i, k in enumerate(sorted_times.keys())}
+    # print('ranked', sorted_times, ranked)
+
+    return int_times
 
 def score_max_temp(max_temp):
     if max_temp <= 0 :
@@ -157,11 +171,13 @@ def rank_conditions(conditions_map, traffic_map):
     traffic_rank = [resort for resort, traffic_time in traffic_tuples]
 
     for r in resorts:
-        traffic_score = (traffic_rank.index(r) + 1) * 2
-        conditions_scoring_dict[r] = conditions_scoring_dict[r] + traffic_score
 
+        traffic_score = (traffic_rank.index(r) + 1) * 2
+        print(r, traffic_score)
+        conditions_scoring_dict[r] = conditions_scoring_dict[r] + traffic_score
+    print(conditions_scoring_dict)
     # Rank the resorts based on total conditions values
-    ranked_tuples = sorted(conditions_scoring_dict.items(), key=lambda kv: kv[1])
+    ranked_tuples = sorted(conditions_scoring_dict.items(), key=lambda kv: kv[1], reverse=True)
     ranked_resorts = [resort for resort, score in ranked_tuples]
 
     return ranked_resorts
@@ -179,6 +195,7 @@ def getSkiSuggestions():
     conditions = dict()
     resorts_to_update = []
     all_resorts = db_conditions.keys()
+
     for key in all_resorts:
         db_entry = db_conditions[key]
         print(db_entry)
@@ -203,8 +220,8 @@ def getSkiSuggestions():
 
     log_debug(f"Evaluating conditions to develop ranking.")
 
-    # TODO: Update to call the actual traffic database
-    traffic_mapping = {resort: 10 for resort in all_resorts}
+    # TODO: Update to call the actual traffic database - shortest time gets highest score
+    traffic_mapping = rank_traffic()
 
     ranked_conditions = rank_conditions(conditions, traffic_mapping)
 

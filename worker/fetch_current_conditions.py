@@ -97,6 +97,7 @@ def parse_raw_html_for_conditions(raw_hmtl):
 
 # Format the current weather conditions to a standard JSON style
 def format_conditions_json(new_snow_inches, wind_speed, lifts_open, trails_open):
+
     conditions_json = {
         "NewSnowInches": float(new_snow_inches),
         "WindSpeed": int(wind_speed),
@@ -126,7 +127,7 @@ def read_winter_park_conditions(raw_html):
     new_snow_inches = expected_snowfall_list_item.find('div', class_="switchable-stat-item switchable-stat-imperial")\
         .find('span', class_="value")\
         .get_text()
-
+    print(new_snow_inches)
     # list tag for open lifts and trails
     trail_conditions_tags = conditions_soup.find_all('li', class_="conditions-trails-content-others-metric")
 
