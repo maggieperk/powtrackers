@@ -57,7 +57,10 @@ resort_to_url = {
 # https://stackoverflow.com/questions/8049520/web-scraping-javascript-page-with-python
 def render_javascript_source_code(url_name):
     try:
-        session = HTMLSession()
+        session = HTMLSession(browser_args=["--disable-gpu",
+                                                    "--disable-dev-shm-usage",
+                                    "--disable-setuid-sandbox",
+                                    "--no-sandbox"])
         r = session.get(url_name)
         r.html.render(sleep=2, timeout=20)
     except Exception as e:
