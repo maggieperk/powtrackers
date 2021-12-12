@@ -53,6 +53,14 @@ resort_to_url = {
     WINTER_PARK: "https://www.winterparkresort.com/the-mountain/mountain-report#/"
 }
 
+# Initialize static text conditions for resorts
+resort_to_static_text = {
+    COPPER: "CopperConditions.txt",
+    ELDORA: "EldoraConditions.txt",
+    STEAMBOAT: "SteamboatConditions.txt",
+    WINTER_PARK: "WinterParkConditions.txt"
+}
+
 
 async def render_javascript_with_pyppeteer(url_name):
     try:
@@ -70,9 +78,6 @@ async def render_javascript_with_pyppeteer(url_name):
     except Exception as e:
         log_debug(f"Exception hit while rendering JavaScript code: {e}")
         return None
-
-    return r.html.html
-
 
 # Fetch the current conditions for the given resort name, returns JSON format
 def scrape_resort_conditions_page(resort_name):
@@ -99,6 +104,24 @@ def scrape_resort_conditions_page(resort_name):
         return resort_not_found_response
 
 
+# Use a static text document with the HTML for the website to produce conditions.  This is in the event
+# That we cannot get JavaScript to render in the Docker context
+def scrape_resort_pages_from_static_html(resort_name):
+    conditions_text = resort_to_static_text[resort_name]
+    resort_not_found_response = {"ERROR resort not found"}
+
+    if resort_name == COPPER:
+        return read_copper_conditions(conditions_text, static_page=True)
+    elif resort_name == ELDORA:
+        return read_eldora_conditions(conditions_text, static_page=True)
+    elif resort_name == STEAMBOAT:
+        return read_steamboat_conditions(conditions_text, static_page=True)
+    elif resort_name == WINTER_PARK:
+        return read_winter_park_conditions(conditions_text, static_page=True)
+    else:
+        return resort_not_found_response
+
+
 # Debugging function to return pretty HTML version of a webpage
 def parse_raw_html_for_conditions(raw_hmtl):
     conditions_soup = BeautifulSoup(raw_hmtl, 'html.parser')
@@ -119,8 +142,12 @@ def format_conditions_json(new_snow_inches, wind_speed, lifts_open, trails_open)
 
 
 # Read HTML file for conditions form Winter Park
-def read_winter_park_conditions(raw_html):
-    conditions_soup = BeautifulSoup(raw_html, 'html.parser')
+def read_winter_park_conditions(raw_html, static_page=False):
+    if static_page:
+        with open(raw_html) as f:
+            conditions_soup = BeautifulSoup(f.read(), 'html.parser')
+    else:
+        conditions_soup = BeautifulSoup(raw_html, 'html.parser')
 
     wind_speed = "-1"
     imperial_stats = conditions_soup.find_all('div', class_="switchable-stat-item switchable-stat-imperial")
@@ -162,8 +189,12 @@ def read_winter_park_conditions(raw_html):
 
 
 # Read Raw HTML from Copper Mountain to get snow report
-def read_copper_conditions(raw_html):
-    conditions_soup = BeautifulSoup(raw_html, 'html.parser')
+def read_copper_conditions(raw_html, static_page=False):
+    if static_page:
+        with open(raw_html) as f:
+            conditions_soup = BeautifulSoup(f.read(), 'html.parser')
+    else:
+        conditions_soup = BeautifulSoup(raw_html, 'html.parser')
 
     # Find New Snow Value
     new_snow_inches = -1.0
@@ -210,8 +241,12 @@ def read_copper_conditions(raw_html):
 # Open Lifts in format: <strong>Open Lifts</strong></span><br>Alpenglow<br>Race<br>EZ<br><br></li>
 # AKA for both I should find the open trails list indicator, then get the following items in <br> and count
 # Find Wind Speed: 22 to 32 miles per hour --> search for re w/ miles per hour and digits beforehand
-def read_eldora_conditions(raw_html):
-    conditions_soup = BeautifulSoup(raw_html, 'html.parser')
+def read_eldora_conditions(raw_html, static_page=False):
+    if static_page:
+        with open(raw_html) as f:
+            conditions_soup = BeautifulSoup(f.read(), 'html.parser')
+    else:
+        conditions_soup = BeautifulSoup(raw_html, 'html.parser')
 
     # Search for wind and snow
     wind_speed = -1
@@ -269,8 +304,12 @@ def read_eldora_conditions(raw_html):
 
 
 # Read Raw HTML from Steamboat to get snow report
-def read_steamboat_conditions(raw_html):
-    conditions_soup = BeautifulSoup(raw_html, 'html.parser')
+def read_steamboat_conditions(raw_html, static_page=False):
+    if static_page:
+        with open(raw_html) as f:
+            conditions_soup = BeautifulSoup(f.read(), 'html.parser')
+    else:
+        conditions_soup = BeautifulSoup(raw_html, 'html.parser')
 
     new_snow_inches = -1
     col_block_div = conditions_soup.find('div', class_="col conditions-block")
@@ -293,9 +332,54 @@ def read_steamboat_conditions(raw_html):
     return format_conditions_json(new_snow_inches, wind_speed, lifts_open, trails_open)
 
 def main():
-    print("Fetching Winter Park Conditions")
-    wp_conditions = scrape_resort_conditions_page(WINTER_PARK)
-    print(wp_conditions)
+    # Run this locally to fetch all reent conditions files and save them for static reference
+    # Test the static page load functions
+    print("Writing Winter Park Conditions to file")
+    with open(resort_to_static_text[WINTER_PARK], "w") as f:
+        winter_park_conditions_url = resort_to_url[WINTER_PARK]
+        response = requests.get(winter_park_conditions_url)
+        raw_html_winter_park = response.text
+        f.write(raw_html_winter_park)
+    print("Wrote winter park conditions to file")
+    winter_park_static_conditions = scrape_resort_pages_from_static_html(WINTER_PARK)
+    print(f"Winter Park static conditions: {winter_park_static_conditions}")
+
+    print("Writing Copper Conditions to file")
+    with open(resort_to_static_text[COPPER], "w") as f:
+        copper_conditions_url = resort_to_url[COPPER]
+        loop = asyncio.get_event_loop()
+        raw_html_copper = loop.run_until_complete(render_javascript_with_pyppeteer(copper_conditions_url))
+        f.write(raw_html_copper)
+    print("Wrote Copper conditions to file")
+    copper_static_conditions = scrape_resort_pages_from_static_html(COPPER)
+    print(f"Copper static conditions: {copper_static_conditions}")
+
+    print("Writing Eldora Conditions to file")
+    with open(resort_to_static_text[ELDORA], "w") as f:
+        eldora_conditions_url = resort_to_url[ELDORA]
+        loop = asyncio.get_event_loop()
+        raw_html_eldora = loop.run_until_complete(render_javascript_with_pyppeteer(eldora_conditions_url))
+        f.write(raw_html_eldora)
+    print("Wrote Eldora conditions to file")
+    eldora_static_conditions = scrape_resort_pages_from_static_html(ELDORA)
+    print(f"Eldora static conditions: {eldora_static_conditions}")
+
+    print("Writing Steamboat Conditions to file")
+    with open(resort_to_static_text[STEAMBOAT], "w") as f:
+        steamboat_conditions_url = resort_to_url[STEAMBOAT]
+        loop = asyncio.get_event_loop()
+        raw_html_steamboat= loop.run_until_complete(render_javascript_with_pyppeteer(steamboat_conditions_url))
+        f.write(raw_html_steamboat)
+    print("Wrote Steamboat conditions to file")
+    steamboat_static_conditions = scrape_resort_pages_from_static_html(STEAMBOAT)
+    print(f"Steamboat static conditions: {steamboat_static_conditions}")
+
+
+    # To test fetching conditions from scrape resort page run these functions
+    """
+    print("\nFetching Winter Park Conditions")
+    copper_conditions = scrape_resort_conditions_page(WINTER_PARK)
+    print(copper_conditions)
 
     print("\nFetching Copper Conditions")
     copper_conditions = scrape_resort_conditions_page(COPPER)
@@ -308,6 +392,7 @@ def main():
     print("\nFetching Steamboat Conditions")
     steamboat_conditions = scrape_resort_conditions_page(STEAMBOAT)
     print(steamboat_conditions)
+    """
 
 if __name__ == "__main__":
     main()

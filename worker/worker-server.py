@@ -1,7 +1,7 @@
 #
 # Worker server
 #
-from fetch_current_conditions import scrape_resort_conditions_page
+from fetch_current_conditions import scrape_resort_conditions_page, scrape_resort_pages_from_static_html
 from weatherUnlockedAPI import getWeatherInfo
 
 import datetime
@@ -84,7 +84,12 @@ def processMessage(queue_message):
     for resort in resorts_list:
         try:
             log_debug(f"Fetching conditions for {resort}")
-            resort_conditions = scrape_resort_conditions_page(resort)
+            resort_conditions = scrape_resort_pages_from_static_html(resort)
+
+            # Uncomment this line to fetch resort conditions dynamically - currently this does not work in Docker
+            # only when running the worker-server.py locally
+            #resort_conditions = scrape_resort_conditions_page(resort)
+
             weather_conditions = getWeatherInfo(db_resort[resort].split(','), appID=appID, APP_KEY=apiKey)
             current_time = datetime.datetime.now().timestamp()
             condition_dict = {
