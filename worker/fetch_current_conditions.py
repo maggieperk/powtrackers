@@ -7,6 +7,7 @@ import platform
 import os
 import re
 import requests
+import sys
 
 rabbitMQHost = os.getenv("RABBITMQ_HOST") or "localhost"
 

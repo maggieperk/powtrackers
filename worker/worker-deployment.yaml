@@ -23,10 +23,8 @@ spec:
         env:
         - name: GET_HOSTS_FROM
           value: dns
-        - name: REDIS_MASTER_SERVICE_HOST
-          value: redis-master
-        - name: REDIS_SLAVE_SERVICE_HOST
-          value: redis-slave
+        - name: REDIS_HOST
+          value: redis
         - name: RABBITMQ_HOST
           value: rabbitmq
           # If your cluster config does not include a dns service, then to
