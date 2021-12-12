@@ -62,7 +62,7 @@ def render_javascript_source_code(url_name):
                                     "--disable-setuid-sandbox",
                                     "--no-sandbox"])
         r = session.get(url_name)
-        r.html.render(sleep=2, timeout=20)
+        r.html.render(sleep=2, timeout=60)
     except Exception as e:
         log_debug(f"Exception hit while rendering JavaScript code: {e}")
         return None
